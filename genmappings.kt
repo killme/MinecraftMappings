@@ -319,7 +319,7 @@ fun downloadSpigotMappings(buildDataCommit: String): Mappings {
     return Mappings.chain(ImmutableList.of(classMappings, memberMappings, Mappings.createPackageMappings(packages)))
 }
 
-const val USAGE = "Usage: ./genmappings.sh <minecraft version> [mcp version]"
+const val USAGE = "Usage: ./genmappings.sh <minecraft version> <mcp version>"
 val AVAILABLE_VERSIONS = setOf("1.8", "1.8.8", "1.9", "1.9.4", "1.10", "1.10.2", "1.11", "1.12")
 
 fun main(args: Array<String>) {
@@ -329,14 +329,14 @@ fun main(args: Array<String>) {
         println(USAGE)
         println("Arguments:")
         println("\tminecraft version -- The minecraft version to generate the mappings for")
-        println("\tmcp version -- The mcpbot mappings version to use (if any)")
+        println("\tmcp version -- The mcpbot mappings version to use")
         exitProcess(0)
     }
     if (args.size > 2) {
         System.err.println("Too many arguments: ${args.size}")
         System.err.println(USAGE)
         exitProcess(1)
-    } else if (args.isEmpty()) {
+    } else if (args.size < 2) {
         System.err.println("Insufficent arguments!")
         System.err.println(USAGE)
         exitProcess(1)
