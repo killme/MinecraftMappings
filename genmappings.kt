@@ -123,6 +123,7 @@ fun downloadMcpMappings(srgMappings: Mappings, mappingsVersion: String): Mapping
         // Parse the mappings data files
         try {
             val url = URL("http://export.mcpbot.bspk.rs/mcp_$fullMappingsChannel/$mappingsId-$minecraftVersion/mcp_$fullMappingsChannel-$mappingsId-$minecraftVersion.zip")
+            println("Downloading MCP mappings from: $url")
             ZipInputStream(url.openStream()).use {
                 var entry = it.nextEntry
                 do {
@@ -159,6 +160,7 @@ fun downloadMcpMappings(srgMappings: Mappings, mappingsVersion: String): Mapping
         json["methods"] = Gson().toJsonTree(methodNames)
         cacheFile.writeText(json.toString())
     } else {
+        println("Reading cache $cacheFile")
         JsonReader(cacheFile.reader()).use {
             it.beginObject()
             while (it.hasNext()) {
@@ -248,7 +250,7 @@ fun getBuildDataCommit(spigotVersion: String): String {
 /**
  * Syntax errors in the srg files that SpecialSource swallows silently
  */
-val brokenLines = setOf("IDispenseBehavior a(LISourceBlock;LItemStack;)LItemStack; dispense", "nv ServerStatisticManager#", "ql ServerStatisticManager#")
+val brokenLines = setOf("IDispenseBehavior a(LISourceBlock;LItemStack;)LItemStack; dispense", "nv ServerStatisticManager#", "ql ServerStatisticManager#", "qn ServerStatisticManager#")
 fun stripBrokenLines(lines: List<String>) = lines.filter { it !in brokenLines && "<init>" !in it }
 
 fun downloadSpigotMappings(buildDataCommit: String): Mappings {
@@ -319,8 +321,9 @@ fun downloadSpigotMappings(buildDataCommit: String): Mappings {
     return Mappings.chain(ImmutableList.of(classMappings, memberMappings, Mappings.createPackageMappings(packages)))
 }
 
-const val USAGE = "Usage: ./genmappings.sh <minecraft version> <mcp version>"
-val AVAILABLE_VERSIONS = setOf("1.8", "1.8.8", "1.9", "1.9.4", "1.10", "1.10.2", "1.11", "1.12")
+const val USAGE = "Usage: ./genmappings.sh <minecraft version> <mcp mc version> <mcp version>"
+val AVAILABLE_VERSIONS = setOf("1.8", "1.8.8", "1.9", "1.9.4", "1.10", "1.10.2", "1.11", "1.12", "1.12.1", "1.12.2")
+val AVAILABLE_MCP_MC_VERSIONS = setOf("1.8", "1.8.8", "1.9", "1.9.4", "1.10.2", "1.11", "1.12")
 
 fun main(args: Array<String>) {
     if ("--help" in args) {
@@ -332,18 +335,23 @@ fun main(args: Array<String>) {
         println("\tmcp version -- The mcpbot mappings version to use")
         exitProcess(0)
     }
-    if (args.size > 2) {
+    if (args.size > 3) {
         System.err.println("Too many arguments: ${args.size}")
         System.err.println(USAGE)
         exitProcess(1)
-    } else if (args.size < 2) {
+    } else if (args.size < 3) {
         System.err.println("Insufficent arguments!")
         System.err.println(USAGE)
         exitProcess(1)
     }
     val minecraftVersion = args[0]
-    val mcpVersion = args[1]
+    val mcpMcVersion = args[1];
+    val mcpVersion = args[2]
     if (minecraftVersion !in AVAILABLE_VERSIONS) {
+        System.err.println("Unknown minecraft version: $minecraftVersion")
+        exitProcess(1)
+    }
+    if (mcpMcVersion !in AVAILABLE_MCP_MC_VERSIONS) {
         System.err.println("Unknown minecraft version: $minecraftVersion")
         exitProcess(1)
     }
@@ -353,7 +361,7 @@ fun main(args: Array<String>) {
         exitProcess(1)
     }
 
-    val srgMappings = downloadSrgMappings(minecraftVersion)
+    val srgMappings = downloadSrgMappings(mcpMcVersion)
     val mcpMappings = downloadMcpMappings(srgMappings, mcpVersion)
 
     val buildDataCommit = getBuildDataCommit(minecraftVersion)
@@ -399,4 +407,10 @@ fun main(args: Array<String>) {
     spigot2srg.inverted().writeTo("srg2spigot.srg")
     spigot2mcp.writeTo("spigot2mcp.srg")
     spigot2mcp.inverted().writeTo("mcp2spigot.srg")
+
+    File(outputFolder, "generated_from").bufferedWriter().use {
+	it.write("mc_version=$minecraftVersion\n");
+	it.write("mcp_mc_version=$mcpMcVersion\n");
+	it.write("mcp_version=$mcpMcVersion\n");
+    }
 }
