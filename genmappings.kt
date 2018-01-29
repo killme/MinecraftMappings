@@ -323,7 +323,7 @@ fun downloadSpigotMappings(buildDataCommit: String): Mappings {
 
 const val USAGE = "Usage: ./genmappings.sh <minecraft version> <mcp mc version> <mcp version>"
 val AVAILABLE_VERSIONS = setOf("1.8", "1.8.8", "1.9", "1.9.4", "1.10", "1.10.2", "1.11", "1.12", "1.12.1", "1.12.2")
-val AVAILABLE_MCP_MC_VERSIONS = setOf("1.8", "1.8.8", "1.9", "1.9.4", "1.10.2", "1.11", "1.12")
+val AVAILABLE_MCP_MC_VERSIONS = setOf("1.8", "1.8.8", "1.9", "1.9.4", "1.10.2", "1.11", "1.12", "1.12.2")
 
 fun main(args: Array<String>) {
     if ("--help" in args) {
@@ -352,7 +352,7 @@ fun main(args: Array<String>) {
         exitProcess(1)
     }
     if (mcpMcVersion !in AVAILABLE_MCP_MC_VERSIONS) {
-        System.err.println("Unknown minecraft version: $minecraftVersion")
+        System.err.println("Unknown (mcp) minecraft version: $mcpMcVersion")
         exitProcess(1)
     }
     val outputFolder = File(minecraftVersion)
@@ -411,6 +411,6 @@ fun main(args: Array<String>) {
     File(outputFolder, "generated_from").bufferedWriter().use {
 	it.write("mc_version=$minecraftVersion\n");
 	it.write("mcp_mc_version=$mcpMcVersion\n");
-	it.write("mcp_version=$mcpMcVersion\n");
+	it.write("mcp_version=$mcpVersion\n");
     }
 }
