@@ -3694,7 +3694,7 @@ FD: acj/a net/minecraft/entity/item/EntityItem/hoverStart
 FD: acj/b net/minecraft/entity/item/EntityItem/LOGGER
 FD: acj/c net/minecraft/entity/item/EntityItem/ITEM
 FD: acj/d net/minecraft/entity/item/EntityItem/age
-FD: acj/e net/minecraft/entity/item/EntityItem/delayBeforeCanPickup
+FD: acj/e net/minecraft/entity/item/EntityItem/pickupDelay
 FD: acj/f net/minecraft/entity/item/EntityItem/health
 FD: acj/g net/minecraft/entity/item/EntityItem/thrower
 FD: acj/h net/minecraft/entity/item/EntityItem/owner
@@ -3873,8 +3873,8 @@ FD: ado/b net/minecraft/entity/monster/EntityVindicator/johnny
 FD: ado/c net/minecraft/entity/monster/EntityVindicator/JOHNNY_SELECTOR
 FD: adp/a net/minecraft/entity/monster/EntityWitch/MODIFIER_UUID
 FD: adp/b net/minecraft/entity/monster/EntityWitch/MODIFIER
-FD: adp/bx net/minecraft/entity/monster/EntityWitch/witchAttackTimer
-FD: adp/c net/minecraft/entity/monster/EntityWitch/IS_AGGRESSIVE
+FD: adp/bx net/minecraft/entity/monster/EntityWitch/potionUseTimer
+FD: adp/c net/minecraft/entity/monster/EntityWitch/IS_DRINKING
 FD: adr$a/a net/minecraft/entity/monster/EntityZombie$GroupData/isChild
 FD: adr$a/b net/minecraft/entity/monster/EntityZombie$GroupData/field_142047_c
 FD: adr/a net/minecraft/entity/monster/EntityZombie/SPAWN_REINFORCEMENTS_CHANCE
@@ -4001,7 +4001,7 @@ FD: aeb/by net/minecraft/entity/player/EntityPlayer/openContainer
 FD: aeb/bz net/minecraft/entity/player/EntityPlayer/foodStats
 FD: aeb/c net/minecraft/entity/player/EntityPlayer/sleepTimer
 FD: aeb/cx net/minecraft/entity/player/EntityPlayer/renderOffsetY
-FD: aeb/d net/minecraft/entity/player/EntityPlayer/spawnChunk
+FD: aeb/d net/minecraft/entity/player/EntityPlayer/spawnPos
 FD: aeb/e net/minecraft/entity/player/EntityPlayer/spawnForced
 FD: aeb/f net/minecraft/entity/player/EntityPlayer/lastXPSound
 FD: aeb/g net/minecraft/entity/player/EntityPlayer/gameProfile
@@ -4096,7 +4096,7 @@ FD: aet/e net/minecraft/entity/projectile/EntityThrowable/yTile
 FD: aet/f net/minecraft/entity/projectile/EntityThrowable/zTile
 FD: aet/g net/minecraft/entity/projectile/EntityThrowable/inTile
 FD: aet/h net/minecraft/entity/projectile/EntityThrowable/thrower
-FD: aev/d net/minecraft/entity/item/EntityEnderPearl/thrower
+FD: aev/d net/minecraft/entity/item/EntityEnderPearl/perlThrower
 FD: aex/d net/minecraft/entity/projectile/EntityPotion/WATER_SENSITIVE
 FD: aex/e net/minecraft/entity/projectile/EntityPotion/ITEM
 FD: aex/f net/minecraft/entity/projectile/EntityPotion/LOGGER
@@ -4140,11 +4140,11 @@ FD: afb/aH net/minecraft/entity/item/EntityBoat/previousStatus
 FD: afb/aI net/minecraft/entity/item/EntityBoat/lastYd
 FD: afb/at net/minecraft/entity/item/EntityBoat/deltaRotation
 FD: afb/au net/minecraft/entity/item/EntityBoat/lerpSteps
-FD: afb/av net/minecraft/entity/item/EntityBoat/boatPitch
+FD: afb/av net/minecraft/entity/item/EntityBoat/lerpX
 FD: afb/aw net/minecraft/entity/item/EntityBoat/lerpY
 FD: afb/ax net/minecraft/entity/item/EntityBoat/lerpZ
-FD: afb/ay net/minecraft/entity/item/EntityBoat/boatYaw
-FD: afb/az net/minecraft/entity/item/EntityBoat/lerpXRot
+FD: afb/ay net/minecraft/entity/item/EntityBoat/lerpYaw
+FD: afb/az net/minecraft/entity/item/EntityBoat/lerpPitch
 FD: afb/b net/minecraft/entity/item/EntityBoat/FORWARD_DIRECTION
 FD: afb/c net/minecraft/entity/item/EntityBoat/DAMAGE_TAKEN
 FD: afb/d net/minecraft/entity/item/EntityBoat/BOAT_TYPE
@@ -4264,7 +4264,7 @@ FD: afz/f net/minecraft/inventory/ContainerEnchantment/xpSeed
 FD: afz/g net/minecraft/inventory/ContainerEnchantment/enchantLevels
 FD: afz/h net/minecraft/inventory/ContainerEnchantment/enchantClue
 FD: afz/i net/minecraft/inventory/ContainerEnchantment/worldClue
-FD: afz/j net/minecraft/inventory/ContainerEnchantment/worldPointer
+FD: afz/j net/minecraft/inventory/ContainerEnchantment/world
 FD: afz/k net/minecraft/inventory/ContainerEnchantment/position
 FD: afz/l net/minecraft/inventory/ContainerEnchantment/rand
 FD: ag/a net/minecraft/advancements/critereon/EnchantmentPredicate/ANY
@@ -4383,8 +4383,8 @@ FD: ahn/r net/minecraft/creativetab/CreativeTabs/hasScrollbar
 FD: ahn/s net/minecraft/creativetab/CreativeTabs/drawTitle
 FD: ahn/t net/minecraft/creativetab/CreativeTabs/enchantmentTypes
 FD: ahn/u net/minecraft/creativetab/CreativeTabs/iconItemStack
-FD: aho/a net/minecraft/item/ItemTool/efficiencyOnProperMaterial
-FD: aho/b net/minecraft/item/ItemTool/damageVsEntity
+FD: aho/a net/minecraft/item/ItemTool/efficiency
+FD: aho/b net/minecraft/item/ItemTool/attackDamage
 FD: aho/c net/minecraft/item/ItemTool/attackSpeed
 FD: aho/d net/minecraft/item/ItemTool/toolMaterial
 FD: aho/e net/minecraft/item/ItemTool/effectiveBlocks
@@ -4455,8 +4455,8 @@ FD: ail$a/d net/minecraft/item/Item$ToolMaterial/DIAMOND
 FD: ail$a/e net/minecraft/item/Item$ToolMaterial/GOLD
 FD: ail$a/f net/minecraft/item/Item$ToolMaterial/harvestLevel
 FD: ail$a/g net/minecraft/item/Item$ToolMaterial/maxUses
-FD: ail$a/h net/minecraft/item/Item$ToolMaterial/efficiencyOnProperMaterial
-FD: ail$a/i net/minecraft/item/Item$ToolMaterial/damageVsEntity
+FD: ail$a/h net/minecraft/item/Item$ToolMaterial/efficiency
+FD: ail$a/i net/minecraft/item/Item$ToolMaterial/attackDamage
 FD: ail$a/j net/minecraft/item/Item$ToolMaterial/enchantability
 FD: ail$a/k net/minecraft/item/Item$ToolMaterial/$VALUES
 FD: ail/a net/minecraft/item/Item/BLOCK_TO_ITEM
@@ -4754,7 +4754,7 @@ FD: aka/d net/minecraft/item/EnumAction/BLOCK
 FD: aka/e net/minecraft/item/EnumAction/BOW
 FD: aka/f net/minecraft/item/EnumAction/$VALUES
 FD: ake/a net/minecraft/potion/PotionType/REGISTRY
-FD: ake/b net/minecraft/potion/PotionType/WATER
+FD: ake/b net/minecraft/potion/PotionType/EMPTY
 FD: ake/c net/minecraft/potion/PotionType/nextPotionTypeId
 FD: ake/d net/minecraft/potion/PotionType/baseName
 FD: ake/e net/minecraft/potion/PotionType/effects
@@ -5403,7 +5403,7 @@ FD: aou/q net/minecraft/block/Block/blockHardness
 FD: aou/r net/minecraft/block/Block/blockResistance
 FD: aou/s net/minecraft/block/Block/enableStats
 FD: aou/t net/minecraft/block/Block/needsRandomTick
-FD: aou/u net/minecraft/block/Block/isBlockContainer
+FD: aou/u net/minecraft/block/Block/hasTileEntity
 FD: aou/v net/minecraft/block/Block/blockSoundType
 FD: aou/w net/minecraft/block/Block/blockParticleGravity
 FD: aou/x net/minecraft/block/Block/blockMaterial
@@ -6856,8 +6856,8 @@ FD: ay$b/a net/minecraft/advancements/critereon/RecipeUnlockedTrigger$Instance/r
 FD: ay/a net/minecraft/advancements/critereon/RecipeUnlockedTrigger/ID
 FD: ay/b net/minecraft/advancements/critereon/RecipeUnlockedTrigger/listeners
 FD: ayc/a net/minecraft/world/chunk/storage/AnvilChunkLoader/LOGGER
-FD: ayc/b net/minecraft/world/chunk/storage/AnvilChunkLoader/chunksToRemove
-FD: ayc/c net/minecraft/world/chunk/storage/AnvilChunkLoader/currentSave
+FD: ayc/b net/minecraft/world/chunk/storage/AnvilChunkLoader/chunksToSave
+FD: ayc/c net/minecraft/world/chunk/storage/AnvilChunkLoader/chunksBeingSaved
 FD: ayc/d net/minecraft/world/chunk/storage/AnvilChunkLoader/chunkSaveLocation
 FD: ayc/e net/minecraft/world/chunk/storage/AnvilChunkLoader/fixer
 FD: ayc/f net/minecraft/world/chunk/storage/AnvilChunkLoader/flushing
@@ -7424,7 +7424,7 @@ FD: bbn$v/d net/minecraft/world/gen/structure/StructureOceanMonumentPieces$RoomD
 FD: bbn$v/e net/minecraft/world/gen/structure/StructureOceanMonumentPieces$RoomDefinition/isSource
 FD: bbn$v/f net/minecraft/world/gen/structure/StructureOceanMonumentPieces$RoomDefinition/scanIndex
 FD: bbo/a net/minecraft/world/gen/structure/MapGenScatteredFeature/BIOMELIST
-FD: bbo/b net/minecraft/world/gen/structure/MapGenScatteredFeature/scatteredFeatureSpawnList
+FD: bbo/b net/minecraft/world/gen/structure/MapGenScatteredFeature/monsters
 FD: bbo/d net/minecraft/world/gen/structure/MapGenScatteredFeature/maxDistanceBetweenScatteredFeatures
 FD: bbo/h net/minecraft/world/gen/structure/MapGenScatteredFeature/minDistanceBetweenScatteredFeatures
 FD: bbp$a/e net/minecraft/world/gen/structure/ComponentScatteredFeaturePieces$DesertPyramid/hasPlacedChest
@@ -7462,7 +7462,7 @@ FD: bbr$f/d net/minecraft/world/gen/structure/StructureStrongholdPieces$PieceWei
 FD: bbr$g/a net/minecraft/world/gen/structure/StructureStrongholdPieces$PortalRoom/hasSpawner
 FD: bbr$j/a net/minecraft/world/gen/structure/StructureStrongholdPieces$RoomCrossing/roomType
 FD: bbr$l/a net/minecraft/world/gen/structure/StructureStrongholdPieces$Stairs/source
-FD: bbr$m/a net/minecraft/world/gen/structure/StructureStrongholdPieces$Stairs2/strongholdPieceWeight
+FD: bbr$m/a net/minecraft/world/gen/structure/StructureStrongholdPieces$Stairs2/lastPlaced
 FD: bbr$m/b net/minecraft/world/gen/structure/StructureStrongholdPieces$Stairs2/strongholdPortalRoom
 FD: bbr$m/c net/minecraft/world/gen/structure/StructureStrongholdPieces$Stairs2/pendingChildren
 FD: bbr$n/a net/minecraft/world/gen/structure/StructureStrongholdPieces$Straight/expandsX
@@ -7530,9 +7530,9 @@ FD: bbz$g/a net/minecraft/world/gen/structure/StructureVillagePieces$House4Garde
 FD: bbz$h/a net/minecraft/world/gen/structure/StructureVillagePieces$WoodHut/isTallHouse
 FD: bbz$h/b net/minecraft/world/gen/structure/StructureVillagePieces$WoodHut/tablePosition
 FD: bbz$j/a net/minecraft/world/gen/structure/StructureVillagePieces$House2/hasMadeChest
-FD: bbz$k/a net/minecraft/world/gen/structure/StructureVillagePieces$Start/worldChunkMngr
+FD: bbz$k/a net/minecraft/world/gen/structure/StructureVillagePieces$Start/biomeProvider
 FD: bbz$k/b net/minecraft/world/gen/structure/StructureVillagePieces$Start/terrainType
-FD: bbz$k/c net/minecraft/world/gen/structure/StructureVillagePieces$Start/structVillagePieceWeight
+FD: bbz$k/c net/minecraft/world/gen/structure/StructureVillagePieces$Start/lastPlaced
 FD: bbz$k/d net/minecraft/world/gen/structure/StructureVillagePieces$Start/structureVillageWeightedPieceList
 FD: bbz$k/e net/minecraft/world/gen/structure/StructureVillagePieces$Start/pendingHouses
 FD: bbz$k/f net/minecraft/world/gen/structure/StructureVillagePieces$Start/pendingRoads
@@ -8382,9 +8382,9 @@ FD: bib$a/K net/minecraft/client/settings/GameSettings$Options/SHOW_SUBTITLES
 FD: bib$a/L net/minecraft/client/settings/GameSettings$Options/REALMS_NOTIFICATIONS
 FD: bib$a/M net/minecraft/client/settings/GameSettings$Options/AUTO_JUMP
 FD: bib$a/N net/minecraft/client/settings/GameSettings$Options/NARRATOR
-FD: bib$a/O net/minecraft/client/settings/GameSettings$Options/enumFloat
-FD: bib$a/P net/minecraft/client/settings/GameSettings$Options/enumBoolean
-FD: bib$a/Q net/minecraft/client/settings/GameSettings$Options/enumString
+FD: bib$a/O net/minecraft/client/settings/GameSettings$Options/isFloat
+FD: bib$a/P net/minecraft/client/settings/GameSettings$Options/isBoolean
+FD: bib$a/Q net/minecraft/client/settings/GameSettings$Options/translation
 FD: bib$a/R net/minecraft/client/settings/GameSettings$Options/valueStep
 FD: bib$a/S net/minecraft/client/settings/GameSettings$Options/valueMin
 FD: bib$a/T net/minecraft/client/settings/GameSettings$Options/valueMax
@@ -10046,8 +10046,8 @@ FD: brx/b net/minecraft/client/network/NetHandlerPlayClient/LOGGER
 FD: brx/c net/minecraft/client/network/NetHandlerPlayClient/netManager
 FD: brx/d net/minecraft/client/network/NetHandlerPlayClient/profile
 FD: brx/e net/minecraft/client/network/NetHandlerPlayClient/guiScreenServer
-FD: brx/f net/minecraft/client/network/NetHandlerPlayClient/gameController
-FD: brx/g net/minecraft/client/network/NetHandlerPlayClient/clientWorldController
+FD: brx/f net/minecraft/client/network/NetHandlerPlayClient/client
+FD: brx/g net/minecraft/client/network/NetHandlerPlayClient/world
 FD: brx/h net/minecraft/client/network/NetHandlerPlayClient/doneLoadingTerrain
 FD: brx/i net/minecraft/client/network/NetHandlerPlayClient/playerInfoMap
 FD: brx/j net/minecraft/client/network/NetHandlerPlayClient/hasStatistics
@@ -10228,7 +10228,7 @@ FD: bte/d net/minecraft/client/particle/ParticleManager/particleEmitters
 FD: bte/e net/minecraft/client/particle/ParticleManager/renderer
 FD: bte/f net/minecraft/client/particle/ParticleManager/rand
 FD: bte/g net/minecraft/client/particle/ParticleManager/particleTypes
-FD: bte/h net/minecraft/client/particle/ParticleManager/queueEntityFX
+FD: bte/h net/minecraft/client/particle/ParticleManager/queue
 FD: btg/a net/minecraft/client/particle/ParticleCloud/oSize
 FD: bth/L net/minecraft/client/particle/ParticlePortal/portalPosY
 FD: bth/M net/minecraft/client/particle/ParticlePortal/portalPosZ
@@ -10678,7 +10678,7 @@ FD: bvb/g net/minecraft/client/shader/Framebuffer/framebufferTexture
 FD: bvb/h net/minecraft/client/shader/Framebuffer/depthBuffer
 FD: bvb/i net/minecraft/client/shader/Framebuffer/framebufferColor
 FD: bvb/j net/minecraft/client/shader/Framebuffer/framebufferFilter
-FD: bvc/a net/minecraft/client/renderer/Tessellator/worldRenderer
+FD: bvc/a net/minecraft/client/renderer/Tessellator/buffer
 FD: bvc/b net/minecraft/client/renderer/Tessellator/vboUploader
 FD: bvc/c net/minecraft/client/renderer/Tessellator/INSTANCE
 FD: bve/a net/minecraft/client/renderer/VertexBufferUploader/vertexBuffer
@@ -11458,7 +11458,7 @@ FD: cdi/g net/minecraft/client/renderer/texture/LayeredTexture/LOGGER
 FD: cdj/a net/minecraft/client/renderer/texture/PngSizeInfo/pngWidth
 FD: cdj/b net/minecraft/client/renderer/texture/PngSizeInfo/pngHeight
 FD: cdk/f net/minecraft/client/renderer/texture/SimpleTexture/textureLocation
-FD: cdk/g net/minecraft/client/renderer/texture/SimpleTexture/LOG
+FD: cdk/g net/minecraft/client/renderer/texture/SimpleTexture/LOGGER
 FD: cdl$a/a net/minecraft/client/renderer/texture/Stitcher$Holder/sprite
 FD: cdl$a/b net/minecraft/client/renderer/texture/Stitcher$Holder/width
 FD: cdl$a/c net/minecraft/client/renderer/texture/Stitcher$Holder/height
@@ -11552,7 +11552,7 @@ FD: cdy$1/a net/minecraft/client/renderer/vertex/VertexFormat$1/field_177382_a
 FD: cdy/a net/minecraft/client/renderer/vertex/VertexFormat/LOGGER
 FD: cdy/b net/minecraft/client/renderer/vertex/VertexFormat/elements
 FD: cdy/c net/minecraft/client/renderer/vertex/VertexFormat/offsets
-FD: cdy/d net/minecraft/client/renderer/vertex/VertexFormat/nextOffset
+FD: cdy/d net/minecraft/client/renderer/vertex/VertexFormat/vertexSize
 FD: cdy/e net/minecraft/client/renderer/vertex/VertexFormat/colorElementOffset
 FD: cdy/f net/minecraft/client/renderer/vertex/VertexFormat/uvOffsetsById
 FD: cdy/g net/minecraft/client/renderer/vertex/VertexFormat/normalElementOffset
@@ -13014,7 +13014,7 @@ FD: net/minecraft/server/MinecraftServer/g net/minecraft/server/MinecraftServer/
 FD: net/minecraft/server/MinecraftServer/h net/minecraft/server/MinecraftServer/tickTimeArray
 FD: net/minecraft/server/MinecraftServer/i net/minecraft/server/MinecraftServer/timeOfLastDimensionTick
 FD: net/minecraft/server/MinecraftServer/j net/minecraft/server/MinecraftServer/futureTaskQueue
-FD: net/minecraft/server/MinecraftServer/k net/minecraft/server/MinecraftServer/LOG
+FD: net/minecraft/server/MinecraftServer/k net/minecraft/server/MinecraftServer/LOGGER
 FD: net/minecraft/server/MinecraftServer/l net/minecraft/server/MinecraftServer/anvilConverterForAnvilFile
 FD: net/minecraft/server/MinecraftServer/m net/minecraft/server/MinecraftServer/usageSnooper
 FD: net/minecraft/server/MinecraftServer/n net/minecraft/server/MinecraftServer/anvilFile
@@ -13321,7 +13321,7 @@ FD: oy/G net/minecraft/network/NetHandlerPlayServer/lastMovePacketCounter
 FD: oy/a net/minecraft/network/NetHandlerPlayServer/netManager
 FD: oy/b net/minecraft/network/NetHandlerPlayServer/player
 FD: oy/c net/minecraft/network/NetHandlerPlayServer/LOGGER
-FD: oy/d net/minecraft/network/NetHandlerPlayServer/serverController
+FD: oy/d net/minecraft/network/NetHandlerPlayServer/server
 FD: oy/e net/minecraft/network/NetHandlerPlayServer/networkTickCount
 FD: oy/f net/minecraft/network/NetHandlerPlayServer/keepAliveId
 FD: oy/g net/minecraft/network/NetHandlerPlayServer/lastPingTime
@@ -13419,7 +13419,7 @@ FD: pj/b net/minecraft/server/management/PlayerList/FILE_IPBANS
 FD: pj/c net/minecraft/server/management/PlayerList/FILE_OPS
 FD: pj/d net/minecraft/server/management/PlayerList/FILE_WHITELIST
 FD: pj/e net/minecraft/server/management/PlayerList/maxPlayers
-FD: pj/f net/minecraft/server/management/PlayerList/LOG
+FD: pj/f net/minecraft/server/management/PlayerList/LOGGER
 FD: pj/g net/minecraft/server/management/PlayerList/DATE_FORMAT
 FD: pj/h net/minecraft/server/management/PlayerList/mcServer
 FD: pj/i net/minecraft/server/management/PlayerList/playerEntityList
@@ -14059,7 +14059,7 @@ FD: qe/l net/minecraft/util/SoundCategory/name
 FD: qe/m net/minecraft/util/SoundCategory/$VALUES
 FD: qi/g net/minecraft/stats/StatCrafting/item
 FD: qj/a net/minecraft/stats/RecipeBook/recipes
-FD: qj/b net/minecraft/stats/RecipeBook/unseenRecipes
+FD: qj/b net/minecraft/stats/RecipeBook/newRecipes
 FD: qj/c net/minecraft/stats/RecipeBook/isGuiOpen
 FD: qj/d net/minecraft/stats/RecipeBook/isFilteringCraftable
 FD: qk/e net/minecraft/stats/RecipeBookServer/LOGGER
@@ -14463,9 +14463,9 @@ FD: ve$4/a net/minecraft/entity/Entity$4/field_180117_a
 FD: ve$5/a net/minecraft/entity/Entity$5/field_190785_a
 FD: ve$6/a net/minecraft/entity/Entity$6/field_191299_a
 FD: ve$6/b net/minecraft/entity/Entity$6/field_191300_b
-FD: ve/A net/minecraft/entity/Entity/isCollidedHorizontally
-FD: ve/B net/minecraft/entity/Entity/isCollidedVertically
-FD: ve/C net/minecraft/entity/Entity/isCollided
+FD: ve/A net/minecraft/entity/Entity/collidedHorizontally
+FD: ve/B net/minecraft/entity/Entity/collidedVertically
+FD: ve/C net/minecraft/entity/Entity/collided
 FD: ve/D net/minecraft/entity/Entity/velocityChanged
 FD: ve/E net/minecraft/entity/Entity/isInWeb
 FD: ve/F net/minecraft/entity/Entity/isDead
@@ -14602,7 +14602,7 @@ FD: vm/b net/minecraft/util/EnumHandSide/RIGHT
 FD: vm/c net/minecraft/util/EnumHandSide/handName
 FD: vm/d net/minecraft/util/EnumHandSide/$VALUES
 FD: vn$1/a net/minecraft/entity/EntityLivingBase$1/field_188473_a
-FD: vn/a net/minecraft/entity/EntityLivingBase/LOG
+FD: vn/a net/minecraft/entity/EntityLivingBase/LOGGER
 FD: vn/aA net/minecraft/entity/EntityLivingBase/attackedAtYaw
 FD: vn/aB net/minecraft/entity/EntityLivingBase/deathTime
 FD: vn/aC net/minecraft/entity/EntityLivingBase/prevSwingProgress
@@ -14664,7 +14664,7 @@ FD: vn/bp net/minecraft/entity/EntityLivingBase/activeItemStackUseCount
 FD: vn/bq net/minecraft/entity/EntityLivingBase/ticksElytraFlying
 FD: vn/br net/minecraft/entity/EntityLivingBase/ARROW_COUNT_IN_ENTITY
 FD: vn/bs net/minecraft/entity/EntityLivingBase/attributeMap
-FD: vn/bt net/minecraft/entity/EntityLivingBase/_combatTracker
+FD: vn/bt net/minecraft/entity/EntityLivingBase/combatTracker
 FD: vn/bu net/minecraft/entity/EntityLivingBase/activePotionsMap
 FD: vn/bv net/minecraft/entity/EntityLivingBase/handInventory
 FD: vn/bw net/minecraft/entity/EntityLivingBase/armorArray
@@ -14689,7 +14689,7 @@ FD: vo/bB net/minecraft/entity/EntityLiving/mapPathPriority
 FD: vo/bC net/minecraft/entity/EntityLiving/deathLootTable
 FD: vo/bD net/minecraft/entity/EntityLiving/deathLootTableSeed
 FD: vo/bE net/minecraft/entity/EntityLiving/isLeashed
-FD: vo/bF net/minecraft/entity/EntityLiving/leashedToEntity
+FD: vo/bF net/minecraft/entity/EntityLiving/leashHolder
 FD: vo/bG net/minecraft/entity/EntityLiving/leashNBTTag
 FD: vo/b_ net/minecraft/entity/EntityLiving/experienceValue
 FD: vo/br net/minecraft/entity/EntityLiving/tasks
@@ -14797,8 +14797,8 @@ FD: wq/c net/minecraft/entity/ai/EntityAIAvoidEntity/canBeSeenSelector
 FD: wq/d net/minecraft/entity/ai/EntityAIAvoidEntity/farSpeed
 FD: wq/e net/minecraft/entity/ai/EntityAIAvoidEntity/nearSpeed
 FD: wq/f net/minecraft/entity/ai/EntityAIAvoidEntity/avoidDistance
-FD: wq/g net/minecraft/entity/ai/EntityAIAvoidEntity/entityPathEntity
-FD: wq/h net/minecraft/entity/ai/EntityAIAvoidEntity/entityPathNavigate
+FD: wq/g net/minecraft/entity/ai/EntityAIAvoidEntity/path
+FD: wq/h net/minecraft/entity/ai/EntityAIAvoidEntity/navigation
 FD: wq/i net/minecraft/entity/ai/EntityAIAvoidEntity/classToAvoid
 FD: wq/j net/minecraft/entity/ai/EntityAIAvoidEntity/avoidTargetSelector
 FD: wr/a net/minecraft/entity/ai/EntityAIBeg/wolf
@@ -14903,7 +14903,7 @@ FD: xm/b net/minecraft/entity/ai/EntityAIAttackMelee/attacker
 FD: xm/c net/minecraft/entity/ai/EntityAIAttackMelee/attackTick
 FD: xm/d net/minecraft/entity/ai/EntityAIAttackMelee/speedTowardsTarget
 FD: xm/e net/minecraft/entity/ai/EntityAIAttackMelee/longMemory
-FD: xm/f net/minecraft/entity/ai/EntityAIAttackMelee/entityPathEntity
+FD: xm/f net/minecraft/entity/ai/EntityAIAttackMelee/path
 FD: xm/g net/minecraft/entity/ai/EntityAIAttackMelee/attackInterval
 FD: xm/h net/minecraft/entity/ai/EntityAIAttackMelee/delayCounter
 FD: xm/i net/minecraft/entity/ai/EntityAIAttackMelee/targetX
@@ -14915,7 +14915,7 @@ FD: xn/c net/minecraft/entity/ai/EntityAIMoveIndoors/insidePosX
 FD: xn/d net/minecraft/entity/ai/EntityAIMoveIndoors/insidePosZ
 FD: xo/a net/minecraft/entity/ai/EntityAIMoveThroughVillage/entity
 FD: xo/b net/minecraft/entity/ai/EntityAIMoveThroughVillage/movementSpeed
-FD: xo/c net/minecraft/entity/ai/EntityAIMoveThroughVillage/entityPathNavigate
+FD: xo/c net/minecraft/entity/ai/EntityAIMoveThroughVillage/path
 FD: xo/d net/minecraft/entity/ai/EntityAIMoveThroughVillage/doorInfo
 FD: xo/e net/minecraft/entity/ai/EntityAIMoveThroughVillage/isNocturnal
 FD: xo/f net/minecraft/entity/ai/EntityAIMoveThroughVillage/doorList
@@ -15318,7 +15318,7 @@ MD: aad/i ()V net/minecraft/entity/passive/EntityRabbit/entityInit ()V
 MD: aad/l (Z)V net/minecraft/entity/passive/EntityRabbit/setJumping (Z)V
 MD: aad/n ()V net/minecraft/entity/passive/EntityRabbit/onLivingUpdate ()V
 MD: aad/r ()V net/minecraft/entity/passive/EntityRabbit/initEntityAI ()V
-MD: aad/r (F)F net/minecraft/entity/passive/EntityRabbit/setJumpCompletion (F)F
+MD: aad/r (F)F net/minecraft/entity/passive/EntityRabbit/getJumpCompletion (F)F
 MD: aae$1/a (Laeb;)Z net/minecraft/entity/passive/EntitySheep$1/canInteractWith (Lnet/minecraft/entity/player/EntityPlayer;)Z
 MD: aae/A ()V net/minecraft/entity/passive/EntitySheep/eatGrassBonus ()V
 MD: aae/F ()Lqc; net/minecraft/entity/passive/EntitySheep/getAmbientSound ()Lnet/minecraft/util/SoundEvent;
@@ -15790,19 +15790,19 @@ MD: abf/c ()V net/minecraft/entity/boss/dragon/phase/PhaseChargingPlayer/doLocal
 MD: abf/d ()V net/minecraft/entity/boss/dragon/phase/PhaseChargingPlayer/initPhase ()V
 MD: abf/f ()F net/minecraft/entity/boss/dragon/phase/PhaseChargingPlayer/getMaxRiseOrFall ()F
 MD: abf/g ()Lbhc; net/minecraft/entity/boss/dragon/phase/PhaseChargingPlayer/getTargetLocation ()Lnet/minecraft/util/math/Vec3d;
-MD: abf/i ()Labr; net/minecraft/entity/boss/dragon/phase/PhaseChargingPlayer/getPhaseList ()Lnet/minecraft/entity/boss/dragon/phase/PhaseList;
+MD: abf/i ()Labr; net/minecraft/entity/boss/dragon/phase/PhaseChargingPlayer/getType ()Lnet/minecraft/entity/boss/dragon/phase/PhaseList;
 MD: abg/b ()V net/minecraft/entity/boss/dragon/phase/PhaseDying/doClientRenderEffects ()V
 MD: abg/c ()V net/minecraft/entity/boss/dragon/phase/PhaseDying/doLocalUpdate ()V
 MD: abg/d ()V net/minecraft/entity/boss/dragon/phase/PhaseDying/initPhase ()V
 MD: abg/f ()F net/minecraft/entity/boss/dragon/phase/PhaseDying/getMaxRiseOrFall ()F
 MD: abg/g ()Lbhc; net/minecraft/entity/boss/dragon/phase/PhaseDying/getTargetLocation ()Lnet/minecraft/util/math/Vec3d;
-MD: abg/i ()Labr; net/minecraft/entity/boss/dragon/phase/PhaseDying/getPhaseList ()Lnet/minecraft/entity/boss/dragon/phase/PhaseList;
+MD: abg/i ()Labr; net/minecraft/entity/boss/dragon/phase/PhaseDying/getType ()Lnet/minecraft/entity/boss/dragon/phase/PhaseList;
 MD: abh/a (Laba;Let;Lup;Laeb;)V net/minecraft/entity/boss/dragon/phase/PhaseHoldingPattern/onCrystalDestroyed (Lnet/minecraft/entity/item/EntityEnderCrystal;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/DamageSource;Lnet/minecraft/entity/player/EntityPlayer;)V
 MD: abh/a (Laeb;)V net/minecraft/entity/boss/dragon/phase/PhaseHoldingPattern/strafePlayer (Lnet/minecraft/entity/player/EntityPlayer;)V
 MD: abh/c ()V net/minecraft/entity/boss/dragon/phase/PhaseHoldingPattern/doLocalUpdate ()V
 MD: abh/d ()V net/minecraft/entity/boss/dragon/phase/PhaseHoldingPattern/initPhase ()V
 MD: abh/g ()Lbhc; net/minecraft/entity/boss/dragon/phase/PhaseHoldingPattern/getTargetLocation ()Lnet/minecraft/util/math/Vec3d;
-MD: abh/i ()Labr; net/minecraft/entity/boss/dragon/phase/PhaseHoldingPattern/getPhaseList ()Lnet/minecraft/entity/boss/dragon/phase/PhaseList;
+MD: abh/i ()Labr; net/minecraft/entity/boss/dragon/phase/PhaseHoldingPattern/getType ()Lnet/minecraft/entity/boss/dragon/phase/PhaseList;
 MD: abh/j ()V net/minecraft/entity/boss/dragon/phase/PhaseHoldingPattern/findNewTarget ()V
 MD: abh/k ()V net/minecraft/entity/boss/dragon/phase/PhaseHoldingPattern/navigateToNextPathNode ()V
 MD: abi/a ()Z net/minecraft/entity/boss/dragon/phase/PhaseHover/getIsStationary ()Z
@@ -15810,11 +15810,11 @@ MD: abi/c ()V net/minecraft/entity/boss/dragon/phase/PhaseHover/doLocalUpdate ()
 MD: abi/d ()V net/minecraft/entity/boss/dragon/phase/PhaseHover/initPhase ()V
 MD: abi/f ()F net/minecraft/entity/boss/dragon/phase/PhaseHover/getMaxRiseOrFall ()F
 MD: abi/g ()Lbhc; net/minecraft/entity/boss/dragon/phase/PhaseHover/getTargetLocation ()Lnet/minecraft/util/math/Vec3d;
-MD: abi/i ()Labr; net/minecraft/entity/boss/dragon/phase/PhaseHover/getPhaseList ()Lnet/minecraft/entity/boss/dragon/phase/PhaseList;
+MD: abi/i ()Labr; net/minecraft/entity/boss/dragon/phase/PhaseHover/getType ()Lnet/minecraft/entity/boss/dragon/phase/PhaseList;
 MD: abj/c ()V net/minecraft/entity/boss/dragon/phase/PhaseLandingApproach/doLocalUpdate ()V
 MD: abj/d ()V net/minecraft/entity/boss/dragon/phase/PhaseLandingApproach/initPhase ()V
 MD: abj/g ()Lbhc; net/minecraft/entity/boss/dragon/phase/PhaseLandingApproach/getTargetLocation ()Lnet/minecraft/util/math/Vec3d;
-MD: abj/i ()Labr; net/minecraft/entity/boss/dragon/phase/PhaseLandingApproach/getPhaseList ()Lnet/minecraft/entity/boss/dragon/phase/PhaseList;
+MD: abj/i ()Labr; net/minecraft/entity/boss/dragon/phase/PhaseLandingApproach/getType ()Lnet/minecraft/entity/boss/dragon/phase/PhaseList;
 MD: abj/j ()V net/minecraft/entity/boss/dragon/phase/PhaseLandingApproach/findNewTarget ()V
 MD: abj/k ()V net/minecraft/entity/boss/dragon/phase/PhaseLandingApproach/navigateToNextPathNode ()V
 MD: abk/b ()V net/minecraft/entity/boss/dragon/phase/PhaseLanding/doClientRenderEffects ()V
@@ -15823,7 +15823,7 @@ MD: abk/d ()V net/minecraft/entity/boss/dragon/phase/PhaseLanding/initPhase ()V
 MD: abk/f ()F net/minecraft/entity/boss/dragon/phase/PhaseLanding/getMaxRiseOrFall ()F
 MD: abk/g ()Lbhc; net/minecraft/entity/boss/dragon/phase/PhaseLanding/getTargetLocation ()Lnet/minecraft/util/math/Vec3d;
 MD: abk/h ()F net/minecraft/entity/boss/dragon/phase/PhaseLanding/getYawFactor ()F
-MD: abk/i ()Labr; net/minecraft/entity/boss/dragon/phase/PhaseLanding/getPhaseList ()Lnet/minecraft/entity/boss/dragon/phase/PhaseList;
+MD: abk/i ()Labr; net/minecraft/entity/boss/dragon/phase/PhaseLanding/getType ()Lnet/minecraft/entity/boss/dragon/phase/PhaseList;
 MD: abl/a ()Z net/minecraft/entity/boss/dragon/phase/IPhase/getIsStationary ()Z
 MD: abl/a (Laaz;Lup;F)F net/minecraft/entity/boss/dragon/phase/IPhase/getAdjustedDamage (Lnet/minecraft/entity/MultiPartEntityPart;Lnet/minecraft/util/DamageSource;F)F
 MD: abl/a (Laba;Let;Lup;Laeb;)V net/minecraft/entity/boss/dragon/phase/IPhase/onCrystalDestroyed (Lnet/minecraft/entity/item/EntityEnderCrystal;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/DamageSource;Lnet/minecraft/entity/player/EntityPlayer;)V
@@ -15834,31 +15834,31 @@ MD: abl/e ()V net/minecraft/entity/boss/dragon/phase/IPhase/removeAreaEffect ()V
 MD: abl/f ()F net/minecraft/entity/boss/dragon/phase/IPhase/getMaxRiseOrFall ()F
 MD: abl/g ()Lbhc; net/minecraft/entity/boss/dragon/phase/IPhase/getTargetLocation ()Lnet/minecraft/util/math/Vec3d;
 MD: abl/h ()F net/minecraft/entity/boss/dragon/phase/IPhase/getYawFactor ()F
-MD: abl/i ()Labr; net/minecraft/entity/boss/dragon/phase/IPhase/getPhaseList ()Lnet/minecraft/entity/boss/dragon/phase/PhaseList;
+MD: abl/i ()Labr; net/minecraft/entity/boss/dragon/phase/IPhase/getType ()Lnet/minecraft/entity/boss/dragon/phase/PhaseList;
 MD: abm/b ()V net/minecraft/entity/boss/dragon/phase/PhaseSittingAttacking/doClientRenderEffects ()V
 MD: abm/c ()V net/minecraft/entity/boss/dragon/phase/PhaseSittingAttacking/doLocalUpdate ()V
 MD: abm/d ()V net/minecraft/entity/boss/dragon/phase/PhaseSittingAttacking/initPhase ()V
-MD: abm/i ()Labr; net/minecraft/entity/boss/dragon/phase/PhaseSittingAttacking/getPhaseList ()Lnet/minecraft/entity/boss/dragon/phase/PhaseList;
+MD: abm/i ()Labr; net/minecraft/entity/boss/dragon/phase/PhaseSittingAttacking/getType ()Lnet/minecraft/entity/boss/dragon/phase/PhaseList;
 MD: abn/b ()V net/minecraft/entity/boss/dragon/phase/PhaseSittingFlaming/doClientRenderEffects ()V
 MD: abn/c ()V net/minecraft/entity/boss/dragon/phase/PhaseSittingFlaming/doLocalUpdate ()V
 MD: abn/d ()V net/minecraft/entity/boss/dragon/phase/PhaseSittingFlaming/initPhase ()V
 MD: abn/e ()V net/minecraft/entity/boss/dragon/phase/PhaseSittingFlaming/removeAreaEffect ()V
-MD: abn/i ()Labr; net/minecraft/entity/boss/dragon/phase/PhaseSittingFlaming/getPhaseList ()Lnet/minecraft/entity/boss/dragon/phase/PhaseList;
+MD: abn/i ()Labr; net/minecraft/entity/boss/dragon/phase/PhaseSittingFlaming/getType ()Lnet/minecraft/entity/boss/dragon/phase/PhaseList;
 MD: abn/j ()V net/minecraft/entity/boss/dragon/phase/PhaseSittingFlaming/resetFlameCount ()V
 MD: abo/c ()V net/minecraft/entity/boss/dragon/phase/PhaseSittingScanning/doLocalUpdate ()V
 MD: abo/d ()V net/minecraft/entity/boss/dragon/phase/PhaseSittingScanning/initPhase ()V
-MD: abo/i ()Labr; net/minecraft/entity/boss/dragon/phase/PhaseSittingScanning/getPhaseList ()Lnet/minecraft/entity/boss/dragon/phase/PhaseList;
+MD: abo/i ()Labr; net/minecraft/entity/boss/dragon/phase/PhaseSittingScanning/getType ()Lnet/minecraft/entity/boss/dragon/phase/PhaseList;
 MD: abp/a (Lvn;)V net/minecraft/entity/boss/dragon/phase/PhaseStrafePlayer/setTarget (Lnet/minecraft/entity/EntityLivingBase;)V
 MD: abp/c ()V net/minecraft/entity/boss/dragon/phase/PhaseStrafePlayer/doLocalUpdate ()V
 MD: abp/d ()V net/minecraft/entity/boss/dragon/phase/PhaseStrafePlayer/initPhase ()V
 MD: abp/g ()Lbhc; net/minecraft/entity/boss/dragon/phase/PhaseStrafePlayer/getTargetLocation ()Lnet/minecraft/util/math/Vec3d;
-MD: abp/i ()Labr; net/minecraft/entity/boss/dragon/phase/PhaseStrafePlayer/getPhaseList ()Lnet/minecraft/entity/boss/dragon/phase/PhaseList;
+MD: abp/i ()Labr; net/minecraft/entity/boss/dragon/phase/PhaseStrafePlayer/getType ()Lnet/minecraft/entity/boss/dragon/phase/PhaseList;
 MD: abp/j ()V net/minecraft/entity/boss/dragon/phase/PhaseStrafePlayer/findNewTarget ()V
 MD: abp/k ()V net/minecraft/entity/boss/dragon/phase/PhaseStrafePlayer/navigateToNextPathNode ()V
 MD: abq/c ()V net/minecraft/entity/boss/dragon/phase/PhaseTakeoff/doLocalUpdate ()V
 MD: abq/d ()V net/minecraft/entity/boss/dragon/phase/PhaseTakeoff/initPhase ()V
 MD: abq/g ()Lbhc; net/minecraft/entity/boss/dragon/phase/PhaseTakeoff/getTargetLocation ()Lnet/minecraft/util/math/Vec3d;
-MD: abq/i ()Labr; net/minecraft/entity/boss/dragon/phase/PhaseTakeoff/getPhaseList ()Lnet/minecraft/entity/boss/dragon/phase/PhaseList;
+MD: abq/i ()Labr; net/minecraft/entity/boss/dragon/phase/PhaseTakeoff/getType ()Lnet/minecraft/entity/boss/dragon/phase/PhaseList;
 MD: abq/j ()V net/minecraft/entity/boss/dragon/phase/PhaseTakeoff/findNewTarget ()V
 MD: abq/k ()V net/minecraft/entity/boss/dragon/phase/PhaseTakeoff/navigateToNextPathNode ()V
 MD: abr/a ()Ljava/lang/reflect/Constructor; net/minecraft/entity/boss/dragon/phase/PhaseList/getConstructor ()Ljava/lang/reflect/Constructor;
@@ -16221,7 +16221,7 @@ MD: acq/d (Lup;)Lqc; net/minecraft/entity/monster/EntityCreeper/getHurtSound (Ln
 MD: acq/dm ()I net/minecraft/entity/monster/EntityCreeper/getCreeperState ()I
 MD: acq/dn ()Z net/minecraft/entity/monster/EntityCreeper/hasIgnited ()Z
 MD: acq/do ()V net/minecraft/entity/monster/EntityCreeper/ignite ()V
-MD: acq/dp ()Z net/minecraft/entity/monster/EntityCreeper/isAIEnabled ()Z
+MD: acq/dp ()Z net/minecraft/entity/monster/EntityCreeper/ableToCauseSkullDrop ()Z
 MD: acq/dq ()V net/minecraft/entity/monster/EntityCreeper/incrementDroppedSkulls ()V
 MD: acq/dr ()V net/minecraft/entity/monster/EntityCreeper/explode ()V
 MD: acq/ds ()V net/minecraft/entity/monster/EntityCreeper/spawnLingeringCloud ()V
@@ -16761,7 +16761,7 @@ MD: adn/a (Lty;)V net/minecraft/entity/monster/EntityVex/setEquipmentBasedOnDiff
 MD: adn/a (Lty;Lvq;)Lvq; net/minecraft/entity/monster/EntityVex/onInitialSpawn (Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/IEntityLivingData;)Lnet/minecraft/entity/IEntityLivingData;
 MD: adn/a (Lvo;)V net/minecraft/entity/monster/EntityVex/setOwner (Lnet/minecraft/entity/EntityLiving;)V
 MD: adn/a (Lvt;DDD)V net/minecraft/entity/monster/EntityVex/move (Lnet/minecraft/entity/MoverType;DDD)V
-MD: adn/a (Z)V net/minecraft/entity/monster/EntityVex/setIsCharging (Z)V
+MD: adn/a (Z)V net/minecraft/entity/monster/EntityVex/setCharging (Z)V
 MD: adn/av ()I net/minecraft/entity/monster/EntityVex/getBrightnessForRender ()I
 MD: adn/aw ()F net/minecraft/entity/monster/EntityVex/getBrightness ()F
 MD: adn/b (Ladn;)Lwo; net/minecraft/entity/monster/EntityVex/access$100 (Lnet/minecraft/entity/monster/EntityVex;)Lnet/minecraft/entity/ai/EntityMoveHelper;
@@ -16810,7 +16810,7 @@ MD: adp/J ()Lnd; net/minecraft/entity/monster/EntityWitch/getLootTable ()Lnet/mi
 MD: adp/a (B)V net/minecraft/entity/monster/EntityWitch/handleStatusUpdate (B)V
 MD: adp/a (Lrw;)V net/minecraft/entity/monster/EntityWitch/registerFixesWitch (Lnet/minecraft/util/datafix/DataFixer;)V
 MD: adp/a (Lvn;F)V net/minecraft/entity/monster/EntityWitch/attackEntityWithRangedAttack (Lnet/minecraft/entity/EntityLivingBase;F)V
-MD: adp/a (Z)V net/minecraft/entity/monster/EntityWitch/setAggressive (Z)V
+MD: adp/a (Z)V net/minecraft/entity/monster/EntityWitch/setDrinkingPotion (Z)V
 MD: adp/bM ()V net/minecraft/entity/monster/EntityWitch/applyEntityAttributes ()V
 MD: adp/by ()F net/minecraft/entity/monster/EntityWitch/getEyeHeight ()F
 MD: adp/c (Lup;F)F net/minecraft/entity/monster/EntityWitch/applyPotionDamageCalculations (Lnet/minecraft/util/DamageSource;F)F
@@ -16998,7 +16998,7 @@ MD: aea/a (Lail;IILfy;)I net/minecraft/entity/player/InventoryPlayer/clearMatchi
 MD: aea/a (Lain;)V net/minecraft/entity/player/InventoryPlayer/setPickedItemStack (Lnet/minecraft/item/ItemStack;)V
 MD: aea/a (Lain;Lain;)Z net/minecraft/entity/player/InventoryPlayer/canMergeStacks (Lnet/minecraft/item/ItemStack;Lnet/minecraft/item/ItemStack;)Z
 MD: aea/a (Lams;Lain;)V net/minecraft/entity/player/InventoryPlayer/placeItemBackInInventory (Lnet/minecraft/world/World;Lnet/minecraft/item/ItemStack;)V
-MD: aea/a (Lawr;)F net/minecraft/entity/player/InventoryPlayer/getStrVsBlock (Lnet/minecraft/block/state/IBlockState;)F
+MD: aea/a (Lawr;)F net/minecraft/entity/player/InventoryPlayer/getDestroySpeed (Lnet/minecraft/block/state/IBlockState;)F
 MD: aea/a (Lge;)Lge; net/minecraft/entity/player/InventoryPlayer/writeToNBT (Lnet/minecraft/nbt/NBTTagList;)Lnet/minecraft/nbt/NBTTagList;
 MD: aea/b (II)V net/minecraft/entity/player/InventoryPlayer/setField (II)V
 MD: aea/b (ILain;)Z net/minecraft/entity/player/InventoryPlayer/isItemValidForSlot (ILnet/minecraft/item/ItemStack;)Z
@@ -17243,7 +17243,7 @@ MD: aef/a (Lbhc;Lbhc;)Lve; net/minecraft/entity/projectile/EntityArrow/findEntit
 MD: aef/a (Lfy;)V net/minecraft/entity/projectile/EntityArrow/readEntityFromNBT (Lnet/minecraft/nbt/NBTTagCompound;)V
 MD: aef/a (Lrw;)V net/minecraft/entity/projectile/EntityArrow/registerFixesArrow (Lnet/minecraft/util/datafix/DataFixer;)V
 MD: aef/a (Lrw;Ljava/lang/String;)V net/minecraft/entity/projectile/EntityArrow/registerFixesArrow (Lnet/minecraft/util/datafix/DataFixer;Ljava/lang/String;)V
-MD: aef/a (Lve;FFFFF)V net/minecraft/entity/projectile/EntityArrow/setAim (Lnet/minecraft/entity/Entity;FFFFF)V
+MD: aef/a (Lve;FFFFF)V net/minecraft/entity/projectile/EntityArrow/shoot (Lnet/minecraft/entity/Entity;FFFFF)V
 MD: aef/a (Lvn;)V net/minecraft/entity/projectile/EntityArrow/arrowHit (Lnet/minecraft/entity/EntityLivingBase;)V
 MD: aef/a (Lvn;F)V net/minecraft/entity/projectile/EntityArrow/setEnchantmentEffectsFromEntity (Lnet/minecraft/entity/EntityLivingBase;F)V
 MD: aef/a (Lvt;DDD)V net/minecraft/entity/projectile/EntityArrow/move (Lnet/minecraft/entity/MoverType;DDD)V
@@ -17253,7 +17253,7 @@ MD: aef/b (Lfy;)V net/minecraft/entity/projectile/EntityArrow/writeEntityToNBT (
 MD: aef/bd ()Z net/minecraft/entity/projectile/EntityArrow/canBeAttackedWithItem ()Z
 MD: aef/by ()F net/minecraft/entity/projectile/EntityArrow/getEyeHeight ()F
 MD: aef/c (D)V net/minecraft/entity/projectile/EntityArrow/setDamage (D)V
-MD: aef/c (DDDFF)V net/minecraft/entity/projectile/EntityArrow/setThrowableHeading (DDDFF)V
+MD: aef/c (DDDFF)V net/minecraft/entity/projectile/EntityArrow/shoot (DDDFF)V
 MD: aef/d (Laeb;)V net/minecraft/entity/projectile/EntityArrow/onCollideWithPlayer (Lnet/minecraft/entity/player/EntityPlayer;)V
 MD: aef/h (DDD)V net/minecraft/entity/projectile/EntityArrow/setVelocity (DDD)V
 MD: aef/i ()V net/minecraft/entity/projectile/EntityArrow/entityInit ()V
@@ -17321,11 +17321,11 @@ MD: aem/a (Lbha;)V net/minecraft/entity/projectile/EntityLlamaSpit/onHit (Lnet/m
 MD: aem/a (Lbhc;Lbhc;)Lve; net/minecraft/entity/projectile/EntityLlamaSpit/getHitEntity (Lnet/minecraft/util/math/Vec3d;Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/entity/Entity;
 MD: aem/a (Lfy;)V net/minecraft/entity/projectile/EntityLlamaSpit/readEntityFromNBT (Lnet/minecraft/nbt/NBTTagCompound;)V
 MD: aem/b (Lfy;)V net/minecraft/entity/projectile/EntityLlamaSpit/writeEntityToNBT (Lnet/minecraft/nbt/NBTTagCompound;)V
-MD: aem/c (DDDFF)V net/minecraft/entity/projectile/EntityLlamaSpit/setThrowableHeading (DDDFF)V
+MD: aem/c (DDDFF)V net/minecraft/entity/projectile/EntityLlamaSpit/shoot (DDDFF)V
 MD: aem/h (DDD)V net/minecraft/entity/projectile/EntityLlamaSpit/setVelocity (DDD)V
 MD: aem/i ()V net/minecraft/entity/projectile/EntityLlamaSpit/entityInit ()V
 MD: aem/j ()V net/minecraft/entity/projectile/EntityLlamaSpit/restoreOwnerFromSave ()V
-MD: aen/c (DDDFF)V net/minecraft/entity/IProjectile/setThrowableHeading (DDDFF)V
+MD: aen/c (DDDFF)V net/minecraft/entity/IProjectile/shoot (DDDFF)V
 MD: aeo/a (Lve;F)V net/minecraft/entity/projectile/ProjectileHelper/rotateTowardsMovement (Lnet/minecraft/entity/Entity;F)V
 MD: aeo/a (Lve;ZZLve;)Lbha; net/minecraft/entity/projectile/ProjectileHelper/forwardsRaycast (Lnet/minecraft/entity/Entity;ZZLnet/minecraft/entity/Entity;)Lnet/minecraft/util/math/RayTraceResult;
 MD: aep/B_ ()V net/minecraft/entity/projectile/EntityShulkerBullet/onUpdate ()V
@@ -17360,9 +17360,9 @@ MD: aet/a (D)Z net/minecraft/entity/projectile/EntityThrowable/isInRangeToRender
 MD: aet/a (Lbha;)V net/minecraft/entity/projectile/EntityThrowable/onImpact (Lnet/minecraft/util/math/RayTraceResult;)V
 MD: aet/a (Lfy;)V net/minecraft/entity/projectile/EntityThrowable/readEntityFromNBT (Lnet/minecraft/nbt/NBTTagCompound;)V
 MD: aet/a (Lrw;Ljava/lang/String;)V net/minecraft/entity/projectile/EntityThrowable/registerFixesThrowable (Lnet/minecraft/util/datafix/DataFixer;Ljava/lang/String;)V
-MD: aet/a (Lve;FFFFF)V net/minecraft/entity/projectile/EntityThrowable/setHeadingFromThrower (Lnet/minecraft/entity/Entity;FFFFF)V
+MD: aet/a (Lve;FFFFF)V net/minecraft/entity/projectile/EntityThrowable/shoot (Lnet/minecraft/entity/Entity;FFFFF)V
 MD: aet/b (Lfy;)V net/minecraft/entity/projectile/EntityThrowable/writeEntityToNBT (Lnet/minecraft/nbt/NBTTagCompound;)V
-MD: aet/c (DDDFF)V net/minecraft/entity/projectile/EntityThrowable/setThrowableHeading (DDDFF)V
+MD: aet/c (DDDFF)V net/minecraft/entity/projectile/EntityThrowable/shoot (DDDFF)V
 MD: aet/h (DDD)V net/minecraft/entity/projectile/EntityThrowable/setVelocity (DDD)V
 MD: aet/i ()V net/minecraft/entity/projectile/EntityThrowable/entityInit ()V
 MD: aet/j ()F net/minecraft/entity/projectile/EntityThrowable/getGravityVelocity ()F
@@ -17941,7 +17941,7 @@ MD: agt/e_ (Lain;)Z net/minecraft/item/ItemArmor/hasColor (Lnet/minecraft/item/I
 MD: agu/a (Labx;Ljava/util/Random;)V net/minecraft/item/ItemArmorStand/applyRandomRotations (Lnet/minecraft/entity/item/EntityArmorStand;Ljava/util/Random;)V
 MD: agu/a (Laeb;Lams;Let;Ltz;Lfa;FFF)Lub; net/minecraft/item/ItemArmorStand/onItemUse (Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/EnumHand;Lnet/minecraft/util/EnumFacing;FFF)Lnet/minecraft/util/EnumActionResult;
 MD: agv/a (Lams;Lain;Lvn;)Laef; net/minecraft/item/ItemArrow/createArrow (Lnet/minecraft/world/World;Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/EntityLivingBase;)Lnet/minecraft/entity/projectile/EntityArrow;
-MD: agw/a (Lain;Lawr;)F net/minecraft/item/ItemAxe/getStrVsBlock (Lnet/minecraft/item/ItemStack;Lnet/minecraft/block/state/IBlockState;)F
+MD: agw/a (Lain;Lawr;)F net/minecraft/item/ItemAxe/getDestroySpeed (Lnet/minecraft/item/ItemStack;Lnet/minecraft/block/state/IBlockState;)F
 MD: agx/a (Laeb;Lams;Let;Ltz;Lfa;FFF)Lub; net/minecraft/item/ItemBanner/onItemUse (Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/EnumHand;Lnet/minecraft/util/EnumFacing;FFF)Lnet/minecraft/util/EnumActionResult;
 MD: agx/a (Lahn;Lfi;)V net/minecraft/item/ItemBanner/getSubItems (Lnet/minecraft/creativetab/CreativeTabs;Lnet/minecraft/util/NonNullList;)V
 MD: agx/a (Lahq;Lge;)Lain; net/minecraft/item/ItemBanner/makeBanner (Lnet/minecraft/item/EnumDyeColor;Lnet/minecraft/nbt/NBTTagList;)Lnet/minecraft/item/ItemStack;
@@ -18045,7 +18045,7 @@ MD: ahn/n ()[Lalj; net/minecraft/creativetab/CreativeTabs/getRelevantEnchantment
 MD: aho/D_ ()Z net/minecraft/item/ItemTool/isFull3D ()Z
 MD: aho/a (Lain;Lain;)Z net/minecraft/item/ItemTool/getIsRepairable (Lnet/minecraft/item/ItemStack;Lnet/minecraft/item/ItemStack;)Z
 MD: aho/a (Lain;Lams;Lawr;Let;Lvn;)Z net/minecraft/item/ItemTool/onBlockDestroyed (Lnet/minecraft/item/ItemStack;Lnet/minecraft/world/World;Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/entity/EntityLivingBase;)Z
-MD: aho/a (Lain;Lawr;)F net/minecraft/item/ItemTool/getStrVsBlock (Lnet/minecraft/item/ItemStack;Lnet/minecraft/block/state/IBlockState;)F
+MD: aho/a (Lain;Lawr;)F net/minecraft/item/ItemTool/getDestroySpeed (Lnet/minecraft/item/ItemStack;Lnet/minecraft/block/state/IBlockState;)F
 MD: aho/a (Lain;Lvn;Lvn;)Z net/minecraft/item/ItemTool/hitEntity (Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/EntityLivingBase;Lnet/minecraft/entity/EntityLivingBase;)Z
 MD: aho/a (Lvj;)Lcom/google/common/collect/Multimap; net/minecraft/item/ItemTool/getItemAttributeModifiers (Lnet/minecraft/inventory/EntityEquipmentSlot;)Lcom/google/common/collect/Multimap;
 MD: aho/c ()I net/minecraft/item/ItemTool/getItemEnchantability ()I
@@ -18174,8 +18174,8 @@ MD: ail$7/a (Lain;)Ljava/lang/String; net/minecraft/item/Item$15/apply (Lnet/min
 MD: ail$8/a (Lain;)Ljava/lang/String; net/minecraft/item/Item$16/apply (Lnet/minecraft/item/ItemStack;)Ljava/lang/String;
 MD: ail$9/a (Lain;)Ljava/lang/String; net/minecraft/item/Item$17/apply (Lnet/minecraft/item/ItemStack;)Ljava/lang/String;
 MD: ail$a/a ()I net/minecraft/item/Item$ToolMaterial/getMaxUses ()I
-MD: ail$a/b ()F net/minecraft/item/Item$ToolMaterial/getEfficiencyOnProperMaterial ()F
-MD: ail$a/c ()F net/minecraft/item/Item$ToolMaterial/getDamageVsEntity ()F
+MD: ail$a/b ()F net/minecraft/item/Item$ToolMaterial/getEfficiency ()F
+MD: ail$a/c ()F net/minecraft/item/Item$ToolMaterial/getAttackDamage ()F
 MD: ail$a/d ()I net/minecraft/item/Item$ToolMaterial/getHarvestLevel ()I
 MD: ail$a/e ()I net/minecraft/item/Item$ToolMaterial/getEnchantability ()I
 MD: ail$a/f ()Lail; net/minecraft/item/Item$ToolMaterial/getRepairItem ()Lnet/minecraft/item/Item;
@@ -18197,7 +18197,7 @@ MD: ail/a (Lain;Lams;Ljava/util/List;Lajz;)V net/minecraft/item/Item/addInformat
 MD: ail/a (Lain;Lams;Lve;IZ)V net/minecraft/item/Item/onUpdate (Lnet/minecraft/item/ItemStack;Lnet/minecraft/world/World;Lnet/minecraft/entity/Entity;IZ)V
 MD: ail/a (Lain;Lams;Lvn;)Lain; net/minecraft/item/Item/onItemUseFinish (Lnet/minecraft/item/ItemStack;Lnet/minecraft/world/World;Lnet/minecraft/entity/EntityLivingBase;)Lnet/minecraft/item/ItemStack;
 MD: ail/a (Lain;Lams;Lvn;I)V net/minecraft/item/Item/onPlayerStoppedUsing (Lnet/minecraft/item/ItemStack;Lnet/minecraft/world/World;Lnet/minecraft/entity/EntityLivingBase;I)V
-MD: ail/a (Lain;Lawr;)F net/minecraft/item/Item/getStrVsBlock (Lnet/minecraft/item/ItemStack;Lnet/minecraft/block/state/IBlockState;)F
+MD: ail/a (Lain;Lawr;)F net/minecraft/item/Item/getDestroySpeed (Lnet/minecraft/item/ItemStack;Lnet/minecraft/block/state/IBlockState;)F
 MD: ail/a (Lain;Lvn;Lvn;)Z net/minecraft/item/Item/hitEntity (Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/EntityLivingBase;Lnet/minecraft/entity/EntityLivingBase;)Z
 MD: ail/a (Lams;Laeb;Ltz;)Luc; net/minecraft/item/Item/onItemRightClick (Lnet/minecraft/world/World;Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/util/EnumHand;)Lnet/minecraft/util/ActionResult;
 MD: ail/a (Lams;Laeb;Z)Lbha; net/minecraft/item/Item/rayTrace (Lnet/minecraft/world/World;Lnet/minecraft/entity/player/EntityPlayer;Z)Lnet/minecraft/util/math/RayTraceResult;
@@ -18271,7 +18271,7 @@ MD: ain/a (Lams;Lve;IZ)V net/minecraft/item/ItemStack/updateAnimation (Lnet/mine
 MD: ain/a (Lams;Lvn;)Lain; net/minecraft/item/ItemStack/onItemUseFinish (Lnet/minecraft/world/World;Lnet/minecraft/entity/EntityLivingBase;)Lnet/minecraft/item/ItemStack;
 MD: ain/a (Lams;Lvn;I)V net/minecraft/item/ItemStack/onPlayerStoppedUsing (Lnet/minecraft/world/World;Lnet/minecraft/entity/EntityLivingBase;I)V
 MD: ain/a (Laou;)Z net/minecraft/item/ItemStack/canDestroy (Lnet/minecraft/block/Block;)Z
-MD: ain/a (Lawr;)F net/minecraft/item/ItemStack/getStrVsBlock (Lnet/minecraft/block/state/IBlockState;)F
+MD: ain/a (Lawr;)F net/minecraft/item/ItemStack/getDestroySpeed (Lnet/minecraft/block/state/IBlockState;)F
 MD: ain/a (Lfy;)Lfy; net/minecraft/item/ItemStack/writeToNBT (Lnet/minecraft/nbt/NBTTagCompound;)Lnet/minecraft/nbt/NBTTagCompound;
 MD: ain/a (Ljava/lang/String;Lgn;)V net/minecraft/item/ItemStack/setTagInfo (Ljava/lang/String;Lnet/minecraft/nbt/NBTBase;)V
 MD: ain/a (Ljava/lang/String;Lwc;Lvj;)V net/minecraft/item/ItemStack/addAttributeModifier (Ljava/lang/String;Lnet/minecraft/entity/ai/attributes/AttributeModifier;Lnet/minecraft/inventory/EntityEquipmentSlot;)V
@@ -18357,7 +18357,7 @@ MD: aix$a/a (Lain;)Ljava/lang/String; net/minecraft/item/ItemMultiTexture$Mapper
 MD: aix/a (I)I net/minecraft/item/ItemMultiTexture/getMetadata (I)I
 MD: aix/a (Lain;)Ljava/lang/String; net/minecraft/item/ItemMultiTexture/getUnlocalizedName (Lnet/minecraft/item/ItemStack;)Ljava/lang/String;
 MD: aiy/a (Lain;Laeb;Lvn;Ltz;)Z net/minecraft/item/ItemNameTag/itemInteractionForEntity (Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/entity/EntityLivingBase;Lnet/minecraft/util/EnumHand;)Z
-MD: aiz/a (Lain;Lawr;)F net/minecraft/item/ItemPickaxe/getStrVsBlock (Lnet/minecraft/item/ItemStack;Lnet/minecraft/block/state/IBlockState;)F
+MD: aiz/a (Lain;Lawr;)F net/minecraft/item/ItemPickaxe/getDestroySpeed (Lnet/minecraft/item/ItemStack;Lnet/minecraft/block/state/IBlockState;)F
 MD: aiz/a (Lawr;)Z net/minecraft/item/ItemPickaxe/canHarvestBlock (Lnet/minecraft/block/state/IBlockState;)Z
 MD: aj/a (Lcom/google/gson/JsonElement;)Laj; net/minecraft/advancements/critereon/EntityPredicate/deserialize (Lcom/google/gson/JsonElement;)Lnet/minecraft/advancements/critereon/EntityPredicate;
 MD: aj/a (Loo;Lve;)Z net/minecraft/advancements/critereon/EntityPredicate/test (Lnet/minecraft/entity/player/EntityPlayerMP;Lnet/minecraft/entity/Entity;)Z
@@ -18384,7 +18384,7 @@ MD: ajh/a (Laeb;Lams;Let;Ltz;Lfa;FFF)Lub; net/minecraft/item/ItemSeeds/onItemUse
 MD: aji/b (Lail;I)V net/minecraft/util/CooldownTrackerServer/notifyOnSet (Lnet/minecraft/item/Item;I)V
 MD: aji/c (Lail;)V net/minecraft/util/CooldownTrackerServer/notifyOnRemove (Lnet/minecraft/item/Item;)V
 MD: ajj/a (Lain;Lams;Lawr;Let;Lvn;)Z net/minecraft/item/ItemShears/onBlockDestroyed (Lnet/minecraft/item/ItemStack;Lnet/minecraft/world/World;Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/entity/EntityLivingBase;)Z
-MD: ajj/a (Lain;Lawr;)F net/minecraft/item/ItemShears/getStrVsBlock (Lnet/minecraft/item/ItemStack;Lnet/minecraft/block/state/IBlockState;)F
+MD: ajj/a (Lain;Lawr;)F net/minecraft/item/ItemShears/getDestroySpeed (Lnet/minecraft/item/ItemStack;Lnet/minecraft/block/state/IBlockState;)F
 MD: ajj/a (Lawr;)Z net/minecraft/item/ItemShears/canHarvestBlock (Lnet/minecraft/block/state/IBlockState;)Z
 MD: ajk$1/a (Lain;Lams;Lvn;)F net/minecraft/item/ItemShield$1/apply (Lnet/minecraft/item/ItemStack;Lnet/minecraft/world/World;Lnet/minecraft/entity/EntityLivingBase;)F
 MD: ajk/a (Lain;Lain;)Z net/minecraft/item/ItemShield/getIsRepairable (Lnet/minecraft/item/ItemStack;Lnet/minecraft/item/ItemStack;)Z
@@ -18427,12 +18427,12 @@ MD: ajv/b (Lain;)Ljava/lang/String; net/minecraft/item/ItemSplashPotion/getItemS
 MD: ajw/D_ ()Z net/minecraft/item/ItemSword/isFull3D ()Z
 MD: ajw/a (Lain;Lain;)Z net/minecraft/item/ItemSword/getIsRepairable (Lnet/minecraft/item/ItemStack;Lnet/minecraft/item/ItemStack;)Z
 MD: ajw/a (Lain;Lams;Lawr;Let;Lvn;)Z net/minecraft/item/ItemSword/onBlockDestroyed (Lnet/minecraft/item/ItemStack;Lnet/minecraft/world/World;Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/entity/EntityLivingBase;)Z
-MD: ajw/a (Lain;Lawr;)F net/minecraft/item/ItemSword/getStrVsBlock (Lnet/minecraft/item/ItemStack;Lnet/minecraft/block/state/IBlockState;)F
+MD: ajw/a (Lain;Lawr;)F net/minecraft/item/ItemSword/getDestroySpeed (Lnet/minecraft/item/ItemStack;Lnet/minecraft/block/state/IBlockState;)F
 MD: ajw/a (Lain;Lvn;Lvn;)Z net/minecraft/item/ItemSword/hitEntity (Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/EntityLivingBase;Lnet/minecraft/entity/EntityLivingBase;)Z
 MD: ajw/a (Lawr;)Z net/minecraft/item/ItemSword/canHarvestBlock (Lnet/minecraft/block/state/IBlockState;)Z
 MD: ajw/a (Lvj;)Lcom/google/common/collect/Multimap; net/minecraft/item/ItemSword/getItemAttributeModifiers (Lnet/minecraft/inventory/EntityEquipmentSlot;)Lcom/google/common/collect/Multimap;
 MD: ajw/c ()I net/minecraft/item/ItemSword/getItemEnchantability ()I
-MD: ajw/g ()F net/minecraft/item/ItemSword/getDamageVsEntity ()F
+MD: ajw/g ()F net/minecraft/item/ItemSword/getAttackDamage ()F
 MD: ajw/h ()Ljava/lang/String; net/minecraft/item/ItemSword/getToolMaterialName ()Ljava/lang/String;
 MD: ajx/a (I)I net/minecraft/item/ItemColored/getMetadata (I)I
 MD: ajx/a (Lain;)Ljava/lang/String; net/minecraft/item/ItemColored/getUnlocalizedName (Lnet/minecraft/item/ItemStack;)Ljava/lang/String;
@@ -18501,32 +18501,32 @@ MD: akj/a (Lafw;)Lain; net/minecraft/item/crafting/RecipesArmorDyes/getCraftingR
 MD: akj/a (Lafw;Lams;)Z net/minecraft/item/crafting/RecipesArmorDyes/matches (Lnet/minecraft/inventory/InventoryCrafting;Lnet/minecraft/world/World;)Z
 MD: akj/b ()Lain; net/minecraft/item/crafting/RecipesArmorDyes/getRecipeOutput ()Lnet/minecraft/item/ItemStack;
 MD: akj/b (Lafw;)Lfi; net/minecraft/item/crafting/RecipesArmorDyes/getRemainingItems (Lnet/minecraft/inventory/InventoryCrafting;)Lnet/minecraft/util/NonNullList;
-MD: akj/c ()Z net/minecraft/item/crafting/RecipesArmorDyes/isHidden ()Z
+MD: akj/c ()Z net/minecraft/item/crafting/RecipesArmorDyes/isDynamic ()Z
 MD: akk$a/a (II)Z net/minecraft/item/crafting/RecipesBanners$RecipeAddPattern/canFit (II)Z
 MD: akk$a/a (Lafw;)Lain; net/minecraft/item/crafting/RecipesBanners$RecipeAddPattern/getCraftingResult (Lnet/minecraft/inventory/InventoryCrafting;)Lnet/minecraft/item/ItemStack;
 MD: akk$a/a (Lafw;Lams;)Z net/minecraft/item/crafting/RecipesBanners$RecipeAddPattern/matches (Lnet/minecraft/inventory/InventoryCrafting;Lnet/minecraft/world/World;)Z
 MD: akk$a/b ()Lain; net/minecraft/item/crafting/RecipesBanners$RecipeAddPattern/getRecipeOutput ()Lnet/minecraft/item/ItemStack;
 MD: akk$a/b (Lafw;)Lfi; net/minecraft/item/crafting/RecipesBanners$RecipeAddPattern/getRemainingItems (Lnet/minecraft/inventory/InventoryCrafting;)Lnet/minecraft/util/NonNullList;
-MD: akk$a/c ()Z net/minecraft/item/crafting/RecipesBanners$RecipeAddPattern/isHidden ()Z
+MD: akk$a/c ()Z net/minecraft/item/crafting/RecipesBanners$RecipeAddPattern/isDynamic ()Z
 MD: akk$a/c (Lafw;)Lave; net/minecraft/item/crafting/RecipesBanners$RecipeAddPattern/matchPatterns (Lnet/minecraft/inventory/InventoryCrafting;)Lnet/minecraft/tileentity/BannerPattern;
 MD: akk$b/a (II)Z net/minecraft/item/crafting/RecipesBanners$RecipeDuplicatePattern/canFit (II)Z
 MD: akk$b/a (Lafw;)Lain; net/minecraft/item/crafting/RecipesBanners$RecipeDuplicatePattern/getCraftingResult (Lnet/minecraft/inventory/InventoryCrafting;)Lnet/minecraft/item/ItemStack;
 MD: akk$b/a (Lafw;Lams;)Z net/minecraft/item/crafting/RecipesBanners$RecipeDuplicatePattern/matches (Lnet/minecraft/inventory/InventoryCrafting;Lnet/minecraft/world/World;)Z
 MD: akk$b/b ()Lain; net/minecraft/item/crafting/RecipesBanners$RecipeDuplicatePattern/getRecipeOutput ()Lnet/minecraft/item/ItemStack;
 MD: akk$b/b (Lafw;)Lfi; net/minecraft/item/crafting/RecipesBanners$RecipeDuplicatePattern/getRemainingItems (Lnet/minecraft/inventory/InventoryCrafting;)Lnet/minecraft/util/NonNullList;
-MD: akk$b/c ()Z net/minecraft/item/crafting/RecipesBanners$RecipeDuplicatePattern/isHidden ()Z
+MD: akk$b/c ()Z net/minecraft/item/crafting/RecipesBanners$RecipeDuplicatePattern/isDynamic ()Z
 MD: akl/a (II)Z net/minecraft/item/crafting/RecipeBookCloning/canFit (II)Z
 MD: akl/a (Lafw;)Lain; net/minecraft/item/crafting/RecipeBookCloning/getCraftingResult (Lnet/minecraft/inventory/InventoryCrafting;)Lnet/minecraft/item/ItemStack;
 MD: akl/a (Lafw;Lams;)Z net/minecraft/item/crafting/RecipeBookCloning/matches (Lnet/minecraft/inventory/InventoryCrafting;Lnet/minecraft/world/World;)Z
 MD: akl/b ()Lain; net/minecraft/item/crafting/RecipeBookCloning/getRecipeOutput ()Lnet/minecraft/item/ItemStack;
 MD: akl/b (Lafw;)Lfi; net/minecraft/item/crafting/RecipeBookCloning/getRemainingItems (Lnet/minecraft/inventory/InventoryCrafting;)Lnet/minecraft/util/NonNullList;
-MD: akl/c ()Z net/minecraft/item/crafting/RecipeBookCloning/isHidden ()Z
+MD: akl/c ()Z net/minecraft/item/crafting/RecipeBookCloning/isDynamic ()Z
 MD: akm/a (II)Z net/minecraft/item/crafting/RecipeFireworks/canFit (II)Z
 MD: akm/a (Lafw;)Lain; net/minecraft/item/crafting/RecipeFireworks/getCraftingResult (Lnet/minecraft/inventory/InventoryCrafting;)Lnet/minecraft/item/ItemStack;
 MD: akm/a (Lafw;Lams;)Z net/minecraft/item/crafting/RecipeFireworks/matches (Lnet/minecraft/inventory/InventoryCrafting;Lnet/minecraft/world/World;)Z
 MD: akm/b ()Lain; net/minecraft/item/crafting/RecipeFireworks/getRecipeOutput ()Lnet/minecraft/item/ItemStack;
 MD: akm/b (Lafw;)Lfi; net/minecraft/item/crafting/RecipeFireworks/getRemainingItems (Lnet/minecraft/inventory/InventoryCrafting;)Lnet/minecraft/util/NonNullList;
-MD: akm/c ()Z net/minecraft/item/crafting/RecipeFireworks/isHidden ()Z
+MD: akm/c ()Z net/minecraft/item/crafting/RecipeFireworks/isDynamic ()Z
 MD: akn/a ()Lakn; net/minecraft/item/crafting/FurnaceRecipes/instance ()Lnet/minecraft/item/crafting/FurnaceRecipes;
 MD: akn/a (Lail;Lain;F)V net/minecraft/item/crafting/FurnaceRecipes/addSmelting (Lnet/minecraft/item/Item;Lnet/minecraft/item/ItemStack;F)V
 MD: akn/a (Lain;)Lain; net/minecraft/item/crafting/FurnaceRecipes/getSmeltingResult (Lnet/minecraft/item/ItemStack;)Lnet/minecraft/item/ItemStack;
@@ -18547,17 +18547,17 @@ MD: akp/a (Lafw;)Lain; net/minecraft/item/crafting/RecipesMapCloning/getCrafting
 MD: akp/a (Lafw;Lams;)Z net/minecraft/item/crafting/RecipesMapCloning/matches (Lnet/minecraft/inventory/InventoryCrafting;Lnet/minecraft/world/World;)Z
 MD: akp/b ()Lain; net/minecraft/item/crafting/RecipesMapCloning/getRecipeOutput ()Lnet/minecraft/item/ItemStack;
 MD: akp/b (Lafw;)Lfi; net/minecraft/item/crafting/RecipesMapCloning/getRemainingItems (Lnet/minecraft/inventory/InventoryCrafting;)Lnet/minecraft/util/NonNullList;
-MD: akp/c ()Z net/minecraft/item/crafting/RecipesMapCloning/isHidden ()Z
+MD: akp/c ()Z net/minecraft/item/crafting/RecipesMapCloning/isDynamic ()Z
 MD: akq/a (Lafw;)Lain; net/minecraft/item/crafting/RecipesMapExtending/getCraftingResult (Lnet/minecraft/inventory/InventoryCrafting;)Lnet/minecraft/item/ItemStack;
 MD: akq/a (Lafw;Lams;)Z net/minecraft/item/crafting/RecipesMapExtending/matches (Lnet/minecraft/inventory/InventoryCrafting;Lnet/minecraft/world/World;)Z
 MD: akq/a (Lbet;)Z net/minecraft/item/crafting/RecipesMapExtending/isExplorationMap (Lnet/minecraft/world/storage/MapData;)Z
-MD: akq/c ()Z net/minecraft/item/crafting/RecipesMapExtending/isHidden ()Z
+MD: akq/c ()Z net/minecraft/item/crafting/RecipesMapExtending/isDynamic ()Z
 MD: akr/a (II)Z net/minecraft/item/crafting/IRecipe/canFit (II)Z
 MD: akr/a (Lafw;)Lain; net/minecraft/item/crafting/IRecipe/getCraftingResult (Lnet/minecraft/inventory/InventoryCrafting;)Lnet/minecraft/item/ItemStack;
 MD: akr/a (Lafw;Lams;)Z net/minecraft/item/crafting/IRecipe/matches (Lnet/minecraft/inventory/InventoryCrafting;Lnet/minecraft/world/World;)Z
 MD: akr/b ()Lain; net/minecraft/item/crafting/IRecipe/getRecipeOutput ()Lnet/minecraft/item/ItemStack;
 MD: akr/b (Lafw;)Lfi; net/minecraft/item/crafting/IRecipe/getRemainingItems (Lnet/minecraft/inventory/InventoryCrafting;)Lnet/minecraft/util/NonNullList;
-MD: akr/c ()Z net/minecraft/item/crafting/IRecipe/isHidden ()Z
+MD: akr/c ()Z net/minecraft/item/crafting/IRecipe/isDynamic ()Z
 MD: akr/d ()Lfi; net/minecraft/item/crafting/IRecipe/getIngredients ()Lnet/minecraft/util/NonNullList;
 MD: akr/e ()Ljava/lang/String; net/minecraft/item/crafting/IRecipe/getGroup ()Ljava/lang/String;
 MD: aks/a ()Z net/minecraft/item/crafting/CraftingManager/init ()Z
@@ -18576,7 +18576,7 @@ MD: akt/a (Lafw;)Lain; net/minecraft/item/crafting/RecipeRepairItem/getCraftingR
 MD: akt/a (Lafw;Lams;)Z net/minecraft/item/crafting/RecipeRepairItem/matches (Lnet/minecraft/inventory/InventoryCrafting;Lnet/minecraft/world/World;)Z
 MD: akt/b ()Lain; net/minecraft/item/crafting/RecipeRepairItem/getRecipeOutput ()Lnet/minecraft/item/ItemStack;
 MD: akt/b (Lafw;)Lfi; net/minecraft/item/crafting/RecipeRepairItem/getRemainingItems (Lnet/minecraft/inventory/InventoryCrafting;)Lnet/minecraft/util/NonNullList;
-MD: akt/c ()Z net/minecraft/item/crafting/RecipeRepairItem/isHidden ()Z
+MD: akt/c ()Z net/minecraft/item/crafting/RecipeRepairItem/isDynamic ()Z
 MD: aku/a (II)Z net/minecraft/item/crafting/ShapedRecipes/canFit (II)Z
 MD: aku/a (Lafw;)Lain; net/minecraft/item/crafting/ShapedRecipes/getCraftingResult (Lnet/minecraft/inventory/InventoryCrafting;)Lnet/minecraft/item/ItemStack;
 MD: aku/a (Lafw;IIZ)Z net/minecraft/item/crafting/ShapedRecipes/checkMatch (Lnet/minecraft/inventory/InventoryCrafting;IIZ)Z
@@ -18610,19 +18610,19 @@ MD: akw$a/a (Lafw;)Lain; net/minecraft/item/crafting/ShieldRecipes$Decoration/ge
 MD: akw$a/a (Lafw;Lams;)Z net/minecraft/item/crafting/ShieldRecipes$Decoration/matches (Lnet/minecraft/inventory/InventoryCrafting;Lnet/minecraft/world/World;)Z
 MD: akw$a/b ()Lain; net/minecraft/item/crafting/ShieldRecipes$Decoration/getRecipeOutput ()Lnet/minecraft/item/ItemStack;
 MD: akw$a/b (Lafw;)Lfi; net/minecraft/item/crafting/ShieldRecipes$Decoration/getRemainingItems (Lnet/minecraft/inventory/InventoryCrafting;)Lnet/minecraft/util/NonNullList;
-MD: akw$a/c ()Z net/minecraft/item/crafting/ShieldRecipes$Decoration/isHidden ()Z
+MD: akw$a/c ()Z net/minecraft/item/crafting/ShieldRecipes$Decoration/isDynamic ()Z
 MD: akx$a/a (II)Z net/minecraft/item/crafting/ShulkerBoxRecipes$ShulkerBoxColoring/canFit (II)Z
 MD: akx$a/a (Lafw;)Lain; net/minecraft/item/crafting/ShulkerBoxRecipes$ShulkerBoxColoring/getCraftingResult (Lnet/minecraft/inventory/InventoryCrafting;)Lnet/minecraft/item/ItemStack;
 MD: akx$a/a (Lafw;Lams;)Z net/minecraft/item/crafting/ShulkerBoxRecipes$ShulkerBoxColoring/matches (Lnet/minecraft/inventory/InventoryCrafting;Lnet/minecraft/world/World;)Z
 MD: akx$a/b ()Lain; net/minecraft/item/crafting/ShulkerBoxRecipes$ShulkerBoxColoring/getRecipeOutput ()Lnet/minecraft/item/ItemStack;
 MD: akx$a/b (Lafw;)Lfi; net/minecraft/item/crafting/ShulkerBoxRecipes$ShulkerBoxColoring/getRemainingItems (Lnet/minecraft/inventory/InventoryCrafting;)Lnet/minecraft/util/NonNullList;
-MD: akx$a/c ()Z net/minecraft/item/crafting/ShulkerBoxRecipes$ShulkerBoxColoring/isHidden ()Z
+MD: akx$a/c ()Z net/minecraft/item/crafting/ShulkerBoxRecipes$ShulkerBoxColoring/isDynamic ()Z
 MD: aky/a (II)Z net/minecraft/item/crafting/RecipeTippedArrow/canFit (II)Z
 MD: aky/a (Lafw;)Lain; net/minecraft/item/crafting/RecipeTippedArrow/getCraftingResult (Lnet/minecraft/inventory/InventoryCrafting;)Lnet/minecraft/item/ItemStack;
 MD: aky/a (Lafw;Lams;)Z net/minecraft/item/crafting/RecipeTippedArrow/matches (Lnet/minecraft/inventory/InventoryCrafting;Lnet/minecraft/world/World;)Z
 MD: aky/b ()Lain; net/minecraft/item/crafting/RecipeTippedArrow/getRecipeOutput ()Lnet/minecraft/item/ItemStack;
 MD: aky/b (Lafw;)Lfi; net/minecraft/item/crafting/RecipeTippedArrow/getRemainingItems (Lnet/minecraft/inventory/InventoryCrafting;)Lnet/minecraft/util/NonNullList;
-MD: aky/c ()Z net/minecraft/item/crafting/RecipeTippedArrow/isHidden ()Z
+MD: aky/c ()Z net/minecraft/item/crafting/RecipeTippedArrow/isDynamic ()Z
 MD: al$a/a ()Z net/minecraft/advancements/critereon/InventoryChangeTrigger$Listeners/isEmpty ()Z
 MD: al$a/a (Laea;)V net/minecraft/advancements/critereon/InventoryChangeTrigger$Listeners/trigger (Lnet/minecraft/entity/player/InventoryPlayer;)V
 MD: al$a/a (Lp$a;)V net/minecraft/advancements/critereon/InventoryChangeTrigger$Listeners/add (Lnet/minecraft/advancements/ICriterionTrigger$Listener;)V
@@ -18931,7 +18931,7 @@ MD: amq/a (Ladz;)V net/minecraft/world/GameType/configurePlayerCapabilities (Lne
 MD: amq/a (Ljava/lang/String;)Lamq; net/minecraft/world/GameType/getByName (Ljava/lang/String;)Lnet/minecraft/world/GameType;
 MD: amq/a (Ljava/lang/String;Lamq;)Lamq; net/minecraft/world/GameType/parseGameTypeWithDefault (Ljava/lang/String;Lnet/minecraft/world/GameType;)Lnet/minecraft/world/GameType;
 MD: amq/b ()Ljava/lang/String; net/minecraft/world/GameType/getName ()Ljava/lang/String;
-MD: amq/c ()Z net/minecraft/world/GameType/isAdventure ()Z
+MD: amq/c ()Z net/minecraft/world/GameType/hasLimitedInteractions ()Z
 MD: amq/d ()Z net/minecraft/world/GameType/isCreative ()Z
 MD: amq/e ()Z net/minecraft/world/GameType/isSurvivalOrAdventure ()Z
 MD: amr/a (DD)I net/minecraft/world/ColorizerGrass/getGrassColor (DD)I
@@ -19266,7 +19266,7 @@ MD: anf/a (ILjava/lang/String;Lanf;)V net/minecraft/world/biome/Biome/registerBi
 MD: anf/a (Lams;Ljava/util/Random;Layu;IID)V net/minecraft/world/biome/Biome/genTerrainBlocks (Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/world/chunk/ChunkPrimer;IID)V
 MD: anf/a (Lams;Ljava/util/Random;Let;)V net/minecraft/world/biome/Biome/decorate (Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V
 MD: anf/a (Lanf;)I net/minecraft/world/biome/Biome/getIdForBiome (Lnet/minecraft/world/biome/Biome;)I
-MD: anf/a (Let;)F net/minecraft/world/biome/Biome/getFloatTemperature (Lnet/minecraft/util/math/BlockPos;)F
+MD: anf/a (Let;)F net/minecraft/world/biome/Biome/getTemperature (Lnet/minecraft/util/math/BlockPos;)F
 MD: anf/a (Ljava/util/Random;)Laze; net/minecraft/world/biome/Biome/getRandomTreeFeature (Ljava/util/Random;)Lnet/minecraft/world/gen/feature/WorldGenAbstractTree;
 MD: anf/a (Ljava/util/Random;Let;)Laqp$a; net/minecraft/world/biome/Biome/pickRandomFlower (Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/BlockFlower$EnumFlowerType;
 MD: anf/a (Lvp;)Ljava/util/List; net/minecraft/world/biome/Biome/getSpawnableList (Lnet/minecraft/entity/EnumCreatureType;)Ljava/util/List;
@@ -19288,13 +19288,13 @@ MD: anf/j ()F net/minecraft/world/biome/Biome/getBaseHeight ()F
 MD: anf/k ()F net/minecraft/world/biome/Biome/getRainfall ()F
 MD: anf/l ()Ljava/lang/String; net/minecraft/world/biome/Biome/getBiomeName ()Ljava/lang/String;
 MD: anf/m ()F net/minecraft/world/biome/Biome/getHeightVariation ()F
-MD: anf/n ()F net/minecraft/world/biome/Biome/getTemperature ()F
+MD: anf/n ()F net/minecraft/world/biome/Biome/getDefaultTemperature ()F
 MD: anf/o ()I net/minecraft/world/biome/Biome/getWaterColor ()I
 MD: anf/p ()Z net/minecraft/world/biome/Biome/isSnowyBiome ()Z
 MD: anf/q ()V net/minecraft/world/biome/Biome/registerBiomes ()V
 MD: ang$a/a (II)Lanf; net/minecraft/world/biome/BiomeCache$Block/getBiome (II)Lnet/minecraft/world/biome/Biome;
 MD: ang/a ()V net/minecraft/world/biome/BiomeCache/cleanupCache ()V
-MD: ang/a (II)Lang$a; net/minecraft/world/biome/BiomeCache/getBiomeCacheBlock (II)Lnet/minecraft/world/biome/BiomeCache$Block;
+MD: ang/a (II)Lang$a; net/minecraft/world/biome/BiomeCache/getEntry (II)Lnet/minecraft/world/biome/BiomeCache$Block;
 MD: ang/a (IILanf;)Lanf; net/minecraft/world/biome/BiomeCache/getBiome (IILnet/minecraft/world/biome/Biome;)Lnet/minecraft/world/biome/Biome;
 MD: ang/a (Lang;)Lanj; net/minecraft/world/biome/BiomeCache/access$000 (Lnet/minecraft/world/biome/BiomeCache;)Lnet/minecraft/world/biome/BiomeProvider;
 MD: ang/b (II)[Lanf; net/minecraft/world/biome/BiomeCache/getCachedBiomes (II)[Lnet/minecraft/world/biome/Biome;
@@ -21926,7 +21926,7 @@ MD: avu/a (ILain;)V net/minecraft/tileentity/TileEntityHopper/setInventorySlotCo
 MD: avu/a (Laea;Laeb;)Lafp; net/minecraft/tileentity/TileEntityHopper/createContainer (Lnet/minecraft/entity/player/InventoryPlayer;Lnet/minecraft/entity/player/EntityPlayer;)Lnet/minecraft/inventory/Container;
 MD: avu/a (Lain;Lain;)Z net/minecraft/tileentity/TileEntityHopper/canCombine (Lnet/minecraft/item/ItemStack;Lnet/minecraft/item/ItemStack;)Z
 MD: avu/a (Lams;DDD)Ljava/util/List; net/minecraft/tileentity/TileEntityHopper/getCaptureItems (Lnet/minecraft/world/World;DDD)Ljava/util/List;
-MD: avu/a (Lavt;)Z net/minecraft/tileentity/TileEntityHopper/captureDroppedItems (Lnet/minecraft/tileentity/IHopper;)Z
+MD: avu/a (Lavt;)Z net/minecraft/tileentity/TileEntityHopper/pullItems (Lnet/minecraft/tileentity/IHopper;)Z
 MD: avu/a (Lavt;Ltt;ILfa;)Z net/minecraft/tileentity/TileEntityHopper/pullItemFromSlot (Lnet/minecraft/tileentity/IHopper;Lnet/minecraft/inventory/IInventory;ILnet/minecraft/util/EnumFacing;)Z
 MD: avu/a (Lfy;)V net/minecraft/tileentity/TileEntityHopper/readFromNBT (Lnet/minecraft/nbt/NBTTagCompound;)V
 MD: avu/a (Lrw;)V net/minecraft/tileentity/TileEntityHopper/registerFixesHopper (Lnet/minecraft/util/datafix/DataFixer;)V
@@ -23211,7 +23211,7 @@ MD: bbm$a/b (Lfy;)V net/minecraft/world/gen/structure/StructureOceanMonument$Sta
 MD: bbm/a ()Ljava/lang/String; net/minecraft/world/gen/structure/StructureOceanMonument/getStructureName ()Ljava/lang/String;
 MD: bbm/a (II)Z net/minecraft/world/gen/structure/StructureOceanMonument/canSpawnStructureAtCoords (II)Z
 MD: bbm/a (Lams;Let;Z)Let; net/minecraft/world/gen/structure/StructureOceanMonument/getNearestStructurePos (Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Z)Lnet/minecraft/util/math/BlockPos;
-MD: bbm/b ()Ljava/util/List; net/minecraft/world/gen/structure/StructureOceanMonument/getScatteredFeatureSpawnList ()Ljava/util/List;
+MD: bbm/b ()Ljava/util/List; net/minecraft/world/gen/structure/StructureOceanMonument/getMonsters ()Ljava/util/List;
 MD: bbm/b (II)Lbbw; net/minecraft/world/gen/structure/StructureOceanMonument/getStructureStart (II)Lnet/minecraft/world/gen/structure/StructureStart;
 MD: bbn$a/a (Lbbn$v;)Z net/minecraft/world/gen/structure/StructureOceanMonumentPieces$XDoubleRoomFitHelper/fits (Lnet/minecraft/world/gen/structure/StructureOceanMonumentPieces$RoomDefinition;)Z
 MD: bbn$a/a (Lfa;Lbbn$v;Ljava/util/Random;)Lbbn$r; net/minecraft/world/gen/structure/StructureOceanMonumentPieces$XDoubleRoomFitHelper/create (Lnet/minecraft/util/EnumFacing;Lnet/minecraft/world/gen/structure/StructureOceanMonumentPieces$RoomDefinition;Ljava/util/Random;)Lnet/minecraft/world/gen/structure/StructureOceanMonumentPieces$Piece;
@@ -23267,7 +23267,7 @@ MD: bbo/a ()Ljava/lang/String; net/minecraft/world/gen/structure/MapGenScattered
 MD: bbo/a (II)Z net/minecraft/world/gen/structure/MapGenScatteredFeature/canSpawnStructureAtCoords (II)Z
 MD: bbo/a (Lams;Let;Z)Let; net/minecraft/world/gen/structure/MapGenScatteredFeature/getNearestStructurePos (Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Z)Lnet/minecraft/util/math/BlockPos;
 MD: bbo/a (Let;)Z net/minecraft/world/gen/structure/MapGenScatteredFeature/isSwampHut (Lnet/minecraft/util/math/BlockPos;)Z
-MD: bbo/b ()Ljava/util/List; net/minecraft/world/gen/structure/MapGenScatteredFeature/getScatteredFeatureSpawnList ()Ljava/util/List;
+MD: bbo/b ()Ljava/util/List; net/minecraft/world/gen/structure/MapGenScatteredFeature/getMonsters ()Ljava/util/List;
 MD: bbo/b (II)Lbbw; net/minecraft/world/gen/structure/MapGenScatteredFeature/getStructureStart (II)Lnet/minecraft/world/gen/structure/StructureStart;
 MD: bbp$a/a (Lams;Ljava/util/Random;Lbbe;)Z net/minecraft/world/gen/structure/ComponentScatteredFeaturePieces$DesertPyramid/addComponentParts (Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/world/gen/structure/StructureBoundingBox;)Z
 MD: bbp$a/a (Lfy;)V net/minecraft/world/gen/structure/ComponentScatteredFeaturePieces$DesertPyramid/writeStructureToNBT (Lnet/minecraft/nbt/NBTTagCompound;)V
@@ -23778,7 +23778,7 @@ MD: beg/a (DDD)Lbeh; net/minecraft/pathfinding/FlyingNodeProcessor/getPathPointT
 MD: beg/a (III)Lbeh; net/minecraft/pathfinding/FlyingNodeProcessor/openPoint (III)Lnet/minecraft/pathfinding/PathPoint;
 MD: beg/a (Lamw;III)Lbef; net/minecraft/pathfinding/FlyingNodeProcessor/getPathNodeType (Lnet/minecraft/world/IBlockAccess;III)Lnet/minecraft/pathfinding/PathNodeType;
 MD: beg/a (Lamw;IIILvo;IIIZZ)Lbef; net/minecraft/pathfinding/FlyingNodeProcessor/getPathNodeType (Lnet/minecraft/world/IBlockAccess;IIILnet/minecraft/entity/EntityLiving;IIIZZ)Lnet/minecraft/pathfinding/PathNodeType;
-MD: beg/a (Lamw;Lvo;)V net/minecraft/pathfinding/FlyingNodeProcessor/initProcessor (Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/entity/EntityLiving;)V
+MD: beg/a (Lamw;Lvo;)V net/minecraft/pathfinding/FlyingNodeProcessor/init (Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/entity/EntityLiving;)V
 MD: beg/a (Lvo;III)Lbef; net/minecraft/pathfinding/FlyingNodeProcessor/getPathNodeType (Lnet/minecraft/entity/EntityLiving;III)Lnet/minecraft/pathfinding/PathNodeType;
 MD: beg/a (Lvo;Let;)Lbef; net/minecraft/pathfinding/FlyingNodeProcessor/getPathNodeType (Lnet/minecraft/entity/EntityLiving;Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/pathfinding/PathNodeType;
 MD: beg/a ([Lbeh;Lbeh;Lbeh;F)I net/minecraft/pathfinding/FlyingNodeProcessor/findPathOptions ([Lnet/minecraft/pathfinding/PathPoint;Lnet/minecraft/pathfinding/PathPoint;Lnet/minecraft/pathfinding/PathPoint;F)I
@@ -23795,7 +23795,7 @@ MD: bei/a (DDD)Lbeh; net/minecraft/pathfinding/NodeProcessor/getPathPointToCoord
 MD: bei/a (III)Lbeh; net/minecraft/pathfinding/NodeProcessor/openPoint (III)Lnet/minecraft/pathfinding/PathPoint;
 MD: bei/a (Lamw;III)Lbef; net/minecraft/pathfinding/NodeProcessor/getPathNodeType (Lnet/minecraft/world/IBlockAccess;III)Lnet/minecraft/pathfinding/PathNodeType;
 MD: bei/a (Lamw;IIILvo;IIIZZ)Lbef; net/minecraft/pathfinding/NodeProcessor/getPathNodeType (Lnet/minecraft/world/IBlockAccess;IIILnet/minecraft/entity/EntityLiving;IIIZZ)Lnet/minecraft/pathfinding/PathNodeType;
-MD: bei/a (Lamw;Lvo;)V net/minecraft/pathfinding/NodeProcessor/initProcessor (Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/entity/EntityLiving;)V
+MD: bei/a (Lamw;Lvo;)V net/minecraft/pathfinding/NodeProcessor/init (Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/entity/EntityLiving;)V
 MD: bei/a (Z)V net/minecraft/pathfinding/NodeProcessor/setCanEnterDoors (Z)V
 MD: bei/a ([Lbeh;Lbeh;Lbeh;F)I net/minecraft/pathfinding/NodeProcessor/findPathOptions ([Lnet/minecraft/pathfinding/PathPoint;Lnet/minecraft/pathfinding/PathPoint;Lnet/minecraft/pathfinding/PathPoint;F)I
 MD: bei/b ()Lbeh; net/minecraft/pathfinding/NodeProcessor/getStart ()Lnet/minecraft/pathfinding/PathPoint;
@@ -23824,7 +23824,7 @@ MD: bej/i ()Lbeh; net/minecraft/pathfinding/Path/getTarget ()Lnet/minecraft/path
 MD: bek/a (Lamw;Lvo;DDDF)Lbej; net/minecraft/pathfinding/PathFinder/findPath (Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/entity/EntityLiving;DDDF)Lnet/minecraft/pathfinding/Path;
 MD: bek/a (Lamw;Lvo;Let;F)Lbej; net/minecraft/pathfinding/PathFinder/findPath (Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/entity/EntityLiving;Lnet/minecraft/util/math/BlockPos;F)Lnet/minecraft/pathfinding/Path;
 MD: bek/a (Lamw;Lvo;Lve;F)Lbej; net/minecraft/pathfinding/PathFinder/findPath (Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/entity/EntityLiving;Lnet/minecraft/entity/Entity;F)Lnet/minecraft/pathfinding/Path;
-MD: bek/a (Lbeh;Lbeh;)Lbej; net/minecraft/pathfinding/PathFinder/createEntityPath (Lnet/minecraft/pathfinding/PathPoint;Lnet/minecraft/pathfinding/PathPoint;)Lnet/minecraft/pathfinding/Path;
+MD: bek/a (Lbeh;Lbeh;)Lbej; net/minecraft/pathfinding/PathFinder/createPath (Lnet/minecraft/pathfinding/PathPoint;Lnet/minecraft/pathfinding/PathPoint;)Lnet/minecraft/pathfinding/Path;
 MD: bek/a (Lbeh;Lbeh;F)Lbej; net/minecraft/pathfinding/PathFinder/findPath (Lnet/minecraft/pathfinding/PathPoint;Lnet/minecraft/pathfinding/PathPoint;F)Lnet/minecraft/pathfinding/Path;
 MD: bel/a (DDD)Lbeh; net/minecraft/pathfinding/SwimNodeProcessor/getPathPointToCoords (DDD)Lnet/minecraft/pathfinding/PathPoint;
 MD: bel/a (Lamw;III)Lbef; net/minecraft/pathfinding/SwimNodeProcessor/getPathNodeType (Lnet/minecraft/world/IBlockAccess;III)Lnet/minecraft/pathfinding/PathNodeType;
@@ -23840,7 +23840,7 @@ MD: bem/a (Lamw;III)Lbef; net/minecraft/pathfinding/WalkNodeProcessor/getPathNod
 MD: bem/a (Lamw;IIIIIIZZLjava/util/EnumSet;Lbef;Let;)Lbef; net/minecraft/pathfinding/WalkNodeProcessor/getPathNodeType (Lnet/minecraft/world/IBlockAccess;IIIIIIZZLjava/util/EnumSet;Lnet/minecraft/pathfinding/PathNodeType;Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/pathfinding/PathNodeType;
 MD: bem/a (Lamw;IIILbef;)Lbef; net/minecraft/pathfinding/WalkNodeProcessor/checkNeighborBlocks (Lnet/minecraft/world/IBlockAccess;IIILnet/minecraft/pathfinding/PathNodeType;)Lnet/minecraft/pathfinding/PathNodeType;
 MD: bem/a (Lamw;IIILvo;IIIZZ)Lbef; net/minecraft/pathfinding/WalkNodeProcessor/getPathNodeType (Lnet/minecraft/world/IBlockAccess;IIILnet/minecraft/entity/EntityLiving;IIIZZ)Lnet/minecraft/pathfinding/PathNodeType;
-MD: bem/a (Lamw;Lvo;)V net/minecraft/pathfinding/WalkNodeProcessor/initProcessor (Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/entity/EntityLiving;)V
+MD: bem/a (Lamw;Lvo;)V net/minecraft/pathfinding/WalkNodeProcessor/init (Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/entity/EntityLiving;)V
 MD: bem/a (Lvo;III)Lbef; net/minecraft/pathfinding/WalkNodeProcessor/getPathNodeType (Lnet/minecraft/entity/EntityLiving;III)Lnet/minecraft/pathfinding/PathNodeType;
 MD: bem/a (Lvo;Let;)Lbef; net/minecraft/pathfinding/WalkNodeProcessor/getPathNodeType (Lnet/minecraft/entity/EntityLiving;Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/pathfinding/PathNodeType;
 MD: bem/a ([Lbeh;Lbeh;Lbeh;F)I net/minecraft/pathfinding/WalkNodeProcessor/findPathOptions ([Lnet/minecraft/pathfinding/PathPoint;Lnet/minecraft/pathfinding/PathPoint;Lnet/minecraft/pathfinding/PathPoint;F)I
@@ -24737,15 +24737,15 @@ MD: bi/f (Lnet/minecraft/server/MinecraftServer;Lbn;Ljava/lang/String;)Ljava/lan
 MD: bia/a ()V net/minecraft/util/MouseHelper/grabMouseCursor ()V
 MD: bia/b ()V net/minecraft/util/MouseHelper/ungrabMouseCursor ()V
 MD: bia/c ()V net/minecraft/util/MouseHelper/mouseXYChange ()V
-MD: bib$a/a ()Z net/minecraft/client/settings/GameSettings$Options/getEnumFloat ()Z
+MD: bib$a/a ()Z net/minecraft/client/settings/GameSettings$Options/isFloat ()Z
 MD: bib$a/a (F)V net/minecraft/client/settings/GameSettings$Options/setValueMax (F)V
-MD: bib$a/a (I)Lbib$a; net/minecraft/client/settings/GameSettings$Options/getEnumOptions (I)Lnet/minecraft/client/settings/GameSettings$Options;
+MD: bib$a/a (I)Lbib$a; net/minecraft/client/settings/GameSettings$Options/byOrdinal (I)Lnet/minecraft/client/settings/GameSettings$Options;
 MD: bib$a/a (Lbib$a;)F net/minecraft/client/settings/GameSettings$Options/access$000 (Lnet/minecraft/client/settings/GameSettings$Options;)F
-MD: bib$a/b ()Z net/minecraft/client/settings/GameSettings$Options/getEnumBoolean ()Z
+MD: bib$a/b ()Z net/minecraft/client/settings/GameSettings$Options/isBoolean ()Z
 MD: bib$a/b (Lbib$a;)F net/minecraft/client/settings/GameSettings$Options/access$100 (Lnet/minecraft/client/settings/GameSettings$Options;)F
-MD: bib$a/c ()I net/minecraft/client/settings/GameSettings$Options/returnEnumOrdinal ()I
+MD: bib$a/c ()I net/minecraft/client/settings/GameSettings$Options/getOrdinal ()I
 MD: bib$a/c (F)F net/minecraft/client/settings/GameSettings$Options/normalizeValue (F)F
-MD: bib$a/d ()Ljava/lang/String; net/minecraft/client/settings/GameSettings$Options/getEnumString ()Ljava/lang/String;
+MD: bib$a/d ()Ljava/lang/String; net/minecraft/client/settings/GameSettings$Options/getTranslation ()Ljava/lang/String;
 MD: bib$a/d (F)F net/minecraft/client/settings/GameSettings$Options/denormalizeValue (F)F
 MD: bib$a/e ()F net/minecraft/client/settings/GameSettings$Options/getValueMin ()F
 MD: bib$a/e (F)F net/minecraft/client/settings/GameSettings$Options/snapToStepClamp (F)F
@@ -24806,16 +24806,16 @@ MD: bii/a ()Lbii; net/minecraft/client/renderer/color/BlockColors/init ()Lnet/mi
 MD: bii/a (Lawr;Lams;Let;)I net/minecraft/client/renderer/color/BlockColors/getColor (Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)I
 MD: bii/a (Lawr;Lamw;Let;I)I net/minecraft/client/renderer/color/BlockColors/colorMultiplier (Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/util/math/BlockPos;I)I
 MD: bii/a (Lbih;[Laou;)V net/minecraft/client/renderer/color/BlockColors/registerBlockColorHandler (Lnet/minecraft/client/renderer/color/IBlockColor;[Lnet/minecraft/block/Block;)V
-MD: bik/a (Lain;I)I net/minecraft/client/renderer/color/IItemColor/getColorFromItemstack (Lnet/minecraft/item/ItemStack;I)I
-MD: bil$1/a (Lain;I)I net/minecraft/client/renderer/color/ItemColors$1/getColorFromItemstack (Lnet/minecraft/item/ItemStack;I)I
-MD: bil$2/a (Lain;I)I net/minecraft/client/renderer/color/ItemColors$2/getColorFromItemstack (Lnet/minecraft/item/ItemStack;I)I
-MD: bil$3/a (Lain;I)I net/minecraft/client/renderer/color/ItemColors$3/getColorFromItemstack (Lnet/minecraft/item/ItemStack;I)I
-MD: bil$4/a (Lain;I)I net/minecraft/client/renderer/color/ItemColors$4/getColorFromItemstack (Lnet/minecraft/item/ItemStack;I)I
-MD: bil$5/a (Lain;I)I net/minecraft/client/renderer/color/ItemColors$5/getColorFromItemstack (Lnet/minecraft/item/ItemStack;I)I
-MD: bil$6/a (Lain;I)I net/minecraft/client/renderer/color/ItemColors$6/getColorFromItemstack (Lnet/minecraft/item/ItemStack;I)I
-MD: bil$7/a (Lain;I)I net/minecraft/client/renderer/color/ItemColors$7/getColorFromItemstack (Lnet/minecraft/item/ItemStack;I)I
-MD: bil$8/a (Lain;I)I net/minecraft/client/renderer/color/ItemColors$8/getColorFromItemstack (Lnet/minecraft/item/ItemStack;I)I
-MD: bil/a (Lain;I)I net/minecraft/client/renderer/color/ItemColors/getColorFromItemstack (Lnet/minecraft/item/ItemStack;I)I
+MD: bik/a (Lain;I)I net/minecraft/client/renderer/color/IItemColor/colorMultiplier (Lnet/minecraft/item/ItemStack;I)I
+MD: bil$1/a (Lain;I)I net/minecraft/client/renderer/color/ItemColors$1/colorMultiplier (Lnet/minecraft/item/ItemStack;I)I
+MD: bil$2/a (Lain;I)I net/minecraft/client/renderer/color/ItemColors$2/colorMultiplier (Lnet/minecraft/item/ItemStack;I)I
+MD: bil$3/a (Lain;I)I net/minecraft/client/renderer/color/ItemColors$3/colorMultiplier (Lnet/minecraft/item/ItemStack;I)I
+MD: bil$4/a (Lain;I)I net/minecraft/client/renderer/color/ItemColors$4/colorMultiplier (Lnet/minecraft/item/ItemStack;I)I
+MD: bil$5/a (Lain;I)I net/minecraft/client/renderer/color/ItemColors$5/colorMultiplier (Lnet/minecraft/item/ItemStack;I)I
+MD: bil$6/a (Lain;I)I net/minecraft/client/renderer/color/ItemColors$6/colorMultiplier (Lnet/minecraft/item/ItemStack;I)I
+MD: bil$7/a (Lain;I)I net/minecraft/client/renderer/color/ItemColors$7/colorMultiplier (Lnet/minecraft/item/ItemStack;I)I
+MD: bil$8/a (Lain;I)I net/minecraft/client/renderer/color/ItemColors$8/colorMultiplier (Lnet/minecraft/item/ItemStack;I)I
+MD: bil/a (Lain;I)I net/minecraft/client/renderer/color/ItemColors/colorMultiplier (Lnet/minecraft/item/ItemStack;I)I
 MD: bil/a (Lbii;)Lbil; net/minecraft/client/renderer/color/ItemColors/init (Lnet/minecraft/client/renderer/color/BlockColors;)Lnet/minecraft/client/renderer/color/ItemColors;
 MD: bil/a (Lbik;[Lail;)V net/minecraft/client/renderer/color/ItemColors/registerItemColorHandler (Lnet/minecraft/client/renderer/color/IItemColor;[Lnet/minecraft/item/Item;)V
 MD: bil/a (Lbik;[Laou;)V net/minecraft/client/renderer/color/ItemColors/registerItemColorHandler (Lnet/minecraft/client/renderer/color/IItemColor;[Lnet/minecraft/block/Block;)V
@@ -27474,7 +27474,7 @@ MD: buw/b ()V net/minecraft/client/renderer/RenderGlobal/makeEntityOutlineShader
 MD: buw/b (DDDDDDFFFF)V net/minecraft/client/renderer/RenderGlobal/renderFilledBox (DDDDDDFFFF)V
 MD: buw/b (FIDDD)V net/minecraft/client/renderer/RenderGlobal/renderCloudsFancy (FIDDD)V
 MD: buw/b (ILet;I)V net/minecraft/client/renderer/RenderGlobal/sendBlockBreakProgress (ILnet/minecraft/util/math/BlockPos;I)V
-MD: buw/b (IZDDDDDD[I)Lbtd; net/minecraft/client/renderer/RenderGlobal/spawnEntityFX (IZDDDDDD[I)Lnet/minecraft/client/particle/Particle;
+MD: buw/b (IZDDDDDD[I)Lbtd; net/minecraft/client/renderer/RenderGlobal/spawnParticle0 (IZDDDDDD[I)Lnet/minecraft/client/particle/Particle;
 MD: buw/b (IZZDDDDDD[I)Lbtd; net/minecraft/client/renderer/RenderGlobal/spawnParticle0 (IZZDDDDDD[I)Lnet/minecraft/client/particle/Particle;
 MD: buw/b (Lbgz;FFFF)V net/minecraft/client/renderer/RenderGlobal/renderFilledBox (Lnet/minecraft/util/math/AxisAlignedBB;FFFF)V
 MD: buw/b (Lbui;DDDDDDFFFF)V net/minecraft/client/renderer/RenderGlobal/addChainedFilledBoxVertices (Lnet/minecraft/client/renderer/BufferBuilder;DDDDDDFFFF)V
@@ -28084,7 +28084,7 @@ MD: bzd/a (Lams;Lbin;Lve;Lve;Lbib;F)V net/minecraft/client/renderer/entity/Rende
 MD: bzd/a (Ljava/lang/Class;)Lbze; net/minecraft/client/renderer/entity/RenderManager/getEntityClassRenderObject (Ljava/lang/Class;)Lnet/minecraft/client/renderer/entity/Render;
 MD: bzd/a (Lve;)Lbze; net/minecraft/client/renderer/entity/RenderManager/getEntityRenderObject (Lnet/minecraft/entity/Entity;)Lnet/minecraft/client/renderer/entity/Render;
 MD: bzd/a (Lve;DDDFF)V net/minecraft/client/renderer/entity/RenderManager/renderDebugBoundingBox (Lnet/minecraft/entity/Entity;DDDFF)V
-MD: bzd/a (Lve;DDDFFZ)V net/minecraft/client/renderer/entity/RenderManager/doRenderEntity (Lnet/minecraft/entity/Entity;DDDFFZ)V
+MD: bzd/a (Lve;DDDFFZ)V net/minecraft/client/renderer/entity/RenderManager/renderEntity (Lnet/minecraft/entity/Entity;DDDFFZ)V
 MD: bzd/a (Lve;F)V net/minecraft/client/renderer/entity/RenderManager/renderMultipass (Lnet/minecraft/entity/Entity;F)V
 MD: bzd/a (Lve;FZ)V net/minecraft/client/renderer/entity/RenderManager/renderEntityStatic (Lnet/minecraft/entity/Entity;FZ)V
 MD: bzd/a (Lve;Lbxw;DDD)Z net/minecraft/client/renderer/entity/RenderManager/shouldRender (Lnet/minecraft/entity/Entity;Lnet/minecraft/client/renderer/culling/ICamera;DDD)Z
@@ -28853,7 +28853,7 @@ MD: cdy/d ()Z net/minecraft/client/renderer/vertex/VertexFormat/hasColor ()Z
 MD: cdy/d (I)I net/minecraft/client/renderer/vertex/VertexFormat/getOffset (I)I
 MD: cdy/e ()I net/minecraft/client/renderer/vertex/VertexFormat/getColorOffset ()I
 MD: cdy/f ()I net/minecraft/client/renderer/vertex/VertexFormat/getIntegerSize ()I
-MD: cdy/g ()I net/minecraft/client/renderer/vertex/VertexFormat/getNextOffset ()I
+MD: cdy/g ()I net/minecraft/client/renderer/vertex/VertexFormat/getSize ()I
 MD: cdy/h ()Ljava/util/List; net/minecraft/client/renderer/vertex/VertexFormat/getElements ()Ljava/util/List;
 MD: cdy/i ()I net/minecraft/client/renderer/vertex/VertexFormat/getElementCount ()I
 MD: cdy/j ()Z net/minecraft/client/renderer/vertex/VertexFormat/hasPosition ()Z
@@ -29803,7 +29803,7 @@ MD: et/a (Lfa;I)Let; net/minecraft/util/math/BlockPos/offset (Lnet/minecraft/uti
 MD: et/a (Lfq;)Let; net/minecraft/util/math/BlockPos/add (Lnet/minecraft/util/math/Vec3i;)Lnet/minecraft/util/math/BlockPos;
 MD: et/b ()Let; net/minecraft/util/math/BlockPos/down ()Lnet/minecraft/util/math/BlockPos;
 MD: et/b (I)Let; net/minecraft/util/math/BlockPos/up (I)Lnet/minecraft/util/math/BlockPos;
-MD: et/b (IIIIII)Ljava/lang/Iterable; net/minecraft/util/math/BlockPos/mutablesBetween (IIIIII)Ljava/lang/Iterable;
+MD: et/b (IIIIII)Ljava/lang/Iterable; net/minecraft/util/math/BlockPos/getAllInBoxMutable (IIIIII)Ljava/lang/Iterable;
 MD: et/b (Let;Let;)Ljava/lang/Iterable; net/minecraft/util/math/BlockPos/getAllInBoxMutable (Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/math/BlockPos;)Ljava/lang/Iterable;
 MD: et/b (Lfq;)Let; net/minecraft/util/math/BlockPos/subtract (Lnet/minecraft/util/math/Vec3i;)Lnet/minecraft/util/math/BlockPos;
 MD: et/c ()Let; net/minecraft/util/math/BlockPos/north ()Lnet/minecraft/util/math/BlockPos;
@@ -32666,17 +32666,17 @@ MD: qe/b ()Ljava/util/Set; net/minecraft/util/SoundCategory/getSoundCategoryName
 MD: qh/a ()Lqm; net/minecraft/stats/StatBasic/registerStat ()Lnet/minecraft/stats/StatBase;
 MD: qi/b ()Lail; net/minecraft/stats/StatCrafting/getItem ()Lnet/minecraft/item/Item;
 MD: qj/a ()Z net/minecraft/stats/RecipeBook/isGuiOpen ()Z
-MD: qj/a (Lakr;)V net/minecraft/stats/RecipeBook/setRecipes (Lnet/minecraft/item/crafting/IRecipe;)V
-MD: qj/a (Lqj;)V net/minecraft/stats/RecipeBook/apply (Lnet/minecraft/stats/RecipeBook;)V
+MD: qj/a (Lakr;)V net/minecraft/stats/RecipeBook/unlock (Lnet/minecraft/item/crafting/IRecipe;)V
+MD: qj/a (Lqj;)V net/minecraft/stats/RecipeBook/copyFrom (Lnet/minecraft/stats/RecipeBook;)V
 MD: qj/a (Z)V net/minecraft/stats/RecipeBook/setGuiOpen (Z)V
 MD: qj/b ()Z net/minecraft/stats/RecipeBook/isFilteringCraftable ()Z
-MD: qj/b (Lakr;)Z net/minecraft/stats/RecipeBook/containsRecipe (Lnet/minecraft/item/crafting/IRecipe;)Z
+MD: qj/b (Lakr;)Z net/minecraft/stats/RecipeBook/isUnlocked (Lnet/minecraft/item/crafting/IRecipe;)Z
 MD: qj/b (Z)V net/minecraft/stats/RecipeBook/setFilteringCraftable (Z)V
-MD: qj/c (Lakr;)V net/minecraft/stats/RecipeBook/removeRecipe (Lnet/minecraft/item/crafting/IRecipe;)V
+MD: qj/c (Lakr;)V net/minecraft/stats/RecipeBook/lock (Lnet/minecraft/item/crafting/IRecipe;)V
 MD: qj/d (Lakr;)I net/minecraft/stats/RecipeBook/getRecipeId (Lnet/minecraft/item/crafting/IRecipe;)I
-MD: qj/e (Lakr;)Z net/minecraft/stats/RecipeBook/isRecipeUnseen (Lnet/minecraft/item/crafting/IRecipe;)Z
-MD: qj/f (Lakr;)V net/minecraft/stats/RecipeBook/setRecipeSeen (Lnet/minecraft/item/crafting/IRecipe;)V
-MD: qj/g (Lakr;)V net/minecraft/stats/RecipeBook/addDisplayedRecipe (Lnet/minecraft/item/crafting/IRecipe;)V
+MD: qj/e (Lakr;)Z net/minecraft/stats/RecipeBook/isNew (Lnet/minecraft/item/crafting/IRecipe;)Z
+MD: qj/f (Lakr;)V net/minecraft/stats/RecipeBook/markSeen (Lnet/minecraft/item/crafting/IRecipe;)V
+MD: qj/g (Lakr;)V net/minecraft/stats/RecipeBook/markNew (Lnet/minecraft/item/crafting/IRecipe;)V
 MD: qk/a (Lfy;)V net/minecraft/stats/RecipeBookServer/read (Lnet/minecraft/nbt/NBTTagCompound;)V
 MD: qk/a (Ljava/util/List;Loo;)V net/minecraft/stats/RecipeBookServer/add (Ljava/util/List;Lnet/minecraft/entity/player/EntityPlayerMP;)V
 MD: qk/a (Ljr$a;Loo;Ljava/util/List;)V net/minecraft/stats/RecipeBookServer/sendPacket (Lnet/minecraft/network/play/server/SPacketRecipeBook$State;Lnet/minecraft/entity/player/EntityPlayerMP;Ljava/util/List;)V
@@ -32878,7 +32878,7 @@ MD: ri/b (DDD)D net/minecraft/util/math/MathHelper/clampedLerp (DDD)D
 MD: ri/b (F)F net/minecraft/util/math/MathHelper/cos (F)F
 MD: ri/b (FF)F net/minecraft/util/math/MathHelper/positiveModulo (FF)F
 MD: ri/b (FFF)I net/minecraft/util/math/MathHelper/rgb (FFF)I
-MD: ri/b (I)I net/minecraft/util/math/MathHelper/clampAngle (I)I
+MD: ri/b (I)I net/minecraft/util/math/MathHelper/wrapDegrees (I)I
 MD: ri/b (II)I net/minecraft/util/math/MathHelper/normalizeAngle (II)I
 MD: ri/b (III)I net/minecraft/util/math/MathHelper/rgb (III)I
 MD: ri/c (D)I net/minecraft/util/math/MathHelper/floor (D)I
@@ -33451,7 +33451,7 @@ MD: ve/at ()V net/minecraft/entity/Entity/createRunningParticles ()V
 MD: ve/au ()Z net/minecraft/entity/Entity/isInLava ()Z
 MD: ve/av ()I net/minecraft/entity/Entity/getBrightnessForRender ()I
 MD: ve/aw ()F net/minecraft/entity/Entity/getBrightness ()F
-MD: ve/ax ()V net/minecraft/entity/Entity/setBeenAttacked ()V
+MD: ve/ax ()V net/minecraft/entity/Entity/markVelocityChanged ()V
 MD: ve/ay ()Z net/minecraft/entity/Entity/canBeCollidedWith ()Z
 MD: ve/az ()Z net/minecraft/entity/Entity/canBePushed ()Z
 MD: ve/b (D)V net/minecraft/entity/Entity/setRenderDistanceWeight (D)V
@@ -33541,12 +33541,12 @@ MD: ve/f (Z)V net/minecraft/entity/Entity/setSprinting (Z)V
 MD: ve/g ()Z net/minecraft/entity/Entity/sendCommandFeedback ()Z
 MD: ve/g (DDD)Z net/minecraft/entity/Entity/isInRangeToRender3d (DDD)Z
 MD: ve/g (F)V net/minecraft/entity/Entity/setRotationYawHead (F)V
-MD: ve/g (Lve;)F net/minecraft/entity/Entity/getDistanceToEntity (Lnet/minecraft/entity/Entity;)F
+MD: ve/g (Lve;)F net/minecraft/entity/Entity/getDistance (Lnet/minecraft/entity/Entity;)F
 MD: ve/g (Z)V net/minecraft/entity/Entity/setGlowing (Z)V
 MD: ve/h (DDD)V net/minecraft/entity/Entity/setVelocity (DDD)V
 MD: ve/h (F)V net/minecraft/entity/Entity/setRenderYawOffset (F)V
 MD: ve/h (I)V net/minecraft/entity/Entity/setEntityId (I)V
-MD: ve/h (Lve;)D net/minecraft/entity/Entity/getDistanceSqToEntity (Lnet/minecraft/entity/Entity;)D
+MD: ve/h (Lve;)D net/minecraft/entity/Entity/getDistanceSq (Lnet/minecraft/entity/Entity;)D
 MD: ve/h (Z)V net/minecraft/entity/Entity/setInvisible (Z)V
 MD: ve/h_ ()Ljava/lang/String; net/minecraft/entity/Entity/getName ()Ljava/lang/String;
 MD: ve/i ()V net/minecraft/entity/Entity/entityInit ()V
@@ -33672,7 +33672,7 @@ MD: vn/aN ()V net/minecraft/entity/EntityLivingBase/performHurtAnimation ()V
 MD: vn/aP ()Ljava/lang/Iterable; net/minecraft/entity/EntityLivingBase/getArmorInventoryList ()Ljava/lang/Iterable;
 MD: vn/a_ (Lain;)V net/minecraft/entity/EntityLivingBase/playEquipSound (Lnet/minecraft/item/ItemStack;)V
 MD: vn/ac ()V net/minecraft/entity/EntityLivingBase/outOfWorld ()V
-MD: vn/ax ()V net/minecraft/entity/EntityLivingBase/setBeenAttacked ()V
+MD: vn/ax ()V net/minecraft/entity/EntityLivingBase/markVelocityChanged ()V
 MD: vn/ay ()Z net/minecraft/entity/EntityLivingBase/canBeCollidedWith ()Z
 MD: vn/az ()Z net/minecraft/entity/EntityLivingBase/canBePushed ()Z
 MD: vn/b (F)V net/minecraft/entity/EntityLivingBase/heal (F)V
@@ -33831,7 +33831,7 @@ MD: vo/b (Laeb;Ltz;)Z net/minecraft/entity/EntityLiving/processInitialInteract (
 MD: vo/b (Lams;)Lzc; net/minecraft/entity/EntityLiving/createNavigator (Lnet/minecraft/world/World;)Lnet/minecraft/pathfinding/PathNavigate;
 MD: vo/b (Lfy;)V net/minecraft/entity/EntityLiving/writeEntityToNBT (Lnet/minecraft/nbt/NBTTagCompound;)V
 MD: vo/b (Lty;)V net/minecraft/entity/EntityLiving/setEnchantmentBasedOnDifficulty (Lnet/minecraft/world/DifficultyInstance;)V
-MD: vo/b (Lve;Z)V net/minecraft/entity/EntityLiving/setLeashedToEntity (Lnet/minecraft/entity/Entity;Z)V
+MD: vo/b (Lve;Z)V net/minecraft/entity/EntityLiving/setLeashHolder (Lnet/minecraft/entity/Entity;Z)V
 MD: vo/b (Lvj;)Lain; net/minecraft/entity/EntityLiving/getItemStackFromSlot (Lnet/minecraft/inventory/EntityEquipmentSlot;)Lnet/minecraft/item/ItemStack;
 MD: vo/b (Lvj;Lain;)Z net/minecraft/entity/EntityLiving/isItemStackInSlot (Lnet/minecraft/inventory/EntityEquipmentSlot;Lnet/minecraft/item/ItemStack;)Z
 MD: vo/b (ZI)V net/minecraft/entity/EntityLiving/dropFewItems (ZI)V
@@ -33854,7 +33854,7 @@ MD: vo/d (Lain;)Lvj; net/minecraft/entity/EntityLiving/getSlotForItemStack (Lnet
 MD: vo/d (Ljava/lang/Class;)Z net/minecraft/entity/EntityLiving/canAttackClass (Ljava/lang/Class;)Z
 MD: vo/d (Lvn;)V net/minecraft/entity/EntityLiving/setAttackTarget (Lnet/minecraft/entity/EntityLivingBase;)V
 MD: vo/da ()Z net/minecraft/entity/EntityLiving/getLeashed ()Z
-MD: vo/db ()Lve; net/minecraft/entity/EntityLiving/getLeashedToEntity ()Lnet/minecraft/entity/Entity;
+MD: vo/db ()Lve; net/minecraft/entity/EntityLiving/getLeashHolder ()Lnet/minecraft/entity/Entity;
 MD: vo/dc ()Z net/minecraft/entity/EntityLiving/isAIDisabled ()Z
 MD: vo/dd ()Z net/minecraft/entity/EntityLiving/isLeftHanded ()Z
 MD: vo/de ()V net/minecraft/entity/EntityLiving/recreateLeash ()V
@@ -34377,7 +34377,7 @@ MD: zc/l ()Lbej; net/minecraft/pathfinding/PathNavigate/getPath ()Lnet/minecraft
 MD: zc/m ()V net/minecraft/pathfinding/PathNavigate/debugPathFinding ()V
 MD: zc/n ()V net/minecraft/pathfinding/PathNavigate/pathFollow ()V
 MD: zc/o ()Z net/minecraft/pathfinding/PathNavigate/noPath ()Z
-MD: zc/p ()V net/minecraft/pathfinding/PathNavigate/clearPathEntity ()V
+MD: zc/p ()V net/minecraft/pathfinding/PathNavigate/clearPath ()V
 MD: zc/q ()Z net/minecraft/pathfinding/PathNavigate/isInLiquid ()Z
 MD: zc/q_ ()V net/minecraft/pathfinding/PathNavigate/removeSunnyPath ()V
 MD: zc/r ()Lbei; net/minecraft/pathfinding/PathNavigate/getNodeProcessor ()Lnet/minecraft/pathfinding/NodeProcessor;
